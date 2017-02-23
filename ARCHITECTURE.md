@@ -5,3 +5,4 @@ VerityFlow is a Claim Provenance Graph Builder that turns claims, quotations, so
 ## System flow
 
 `	ext
+fixtures or operator input -> parser -> normalized domain records -> analysis engine -> report model -> terminal / JSON / Markdown
