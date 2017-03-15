@@ -17,3 +17,9 @@ Entries describe user-visible behavior at each release.
 
 - The dossier JSON contract is frozen: `summary` and `graph_stats` are the
   stable top-level keys consumed by `VerityFlow.Runtime`.
+- Markdown dossiers escape table-breaking characters inside quotations.
+
+### Added
+
+- `graph --emit full` serialises the complete compiled graph.
+
