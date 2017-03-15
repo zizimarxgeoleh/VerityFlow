@@ -23,3 +23,10 @@ Entries describe user-visible behavior at each release.
 
 - `graph --emit full` serialises the complete compiled graph.
 
+## [4.0.0] - 2026-06-23
+
+### Changed
+
+- The `validate` exit contract is now explicit: `2` for structural anomalies,
+  `1` for unreadable input. Scripts that treated any non-zero code the same are
+  unaffected; CI gates can now distinguish the two cases.
