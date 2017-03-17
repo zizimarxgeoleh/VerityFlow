@@ -30,3 +30,10 @@ Entries describe user-visible behavior at each release.
 - The `validate` exit contract is now explicit: `2` for structural anomalies,
   `1` for unreadable input. Scripts that treated any non-zero code the same are
   unaffected; CI gates can now distinguish the two cases.
+- Score output rounds every float to four decimals for diff-friendly reports.
+
+## [3.1.0] - 2026-04-28
+
+### Added
+
+- Per-claim `n_domains`, `n_supporting` and `n_refuting` counters in the score
