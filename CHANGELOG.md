@@ -37,3 +37,10 @@ Entries describe user-visible behavior at each release.
 ### Added
 
 - Per-claim `n_domains`, `n_supporting` and `n_refuting` counters in the score
+  report, so consumers no longer have to re-derive them from the graph.
+- Dossier entries are ordered by descending support index with the claim id as
+  a deterministic tie-breaker.
+
+## [2.6.0] - 2026-02-24
+
+### Added
