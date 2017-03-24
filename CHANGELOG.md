@@ -51,3 +51,9 @@ Entries describe user-visible behavior at each release.
 
 ## [1.0.1] - 2026-01-13
 
+### Fixed
+
+- Unknown relations are rejected at parse time with a message naming the closed
+  vocabulary, instead of failing later during scoring.
+
+## [1.0.0] - 2025-12-02
