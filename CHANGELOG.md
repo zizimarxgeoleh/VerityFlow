@@ -44,3 +44,10 @@ Entries describe user-visible behavior at each release.
 ## [2.6.0] - 2026-02-24
 
 ### Added
+
+- `dossier --title` sets the report heading for Markdown and JSON output.
+- The Markdown dossier opens with a "Graph at a glance" table covering node,
+  link, dangling and orphan counts.
+
+## [1.0.1] - 2026-01-13
+
