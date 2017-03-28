@@ -71,3 +71,10 @@ Entries describe user-visible behavior at each release.
 
 - Confidence-weighted support strength: each relation carries a signed weight
   (`supports` +1.0, `qualifies` +0.5, `context` +0.25, `refutes` -1.0) scaled by
+  the annotator confidence and squashed through a logistic curve.
+
+## [0.7.0] - 2023-06-27
+
+### Added
+
+- `validate` reports dangling links and orphan quotations and exits `2` when
