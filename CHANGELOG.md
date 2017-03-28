@@ -64,3 +64,10 @@ Entries describe user-visible behavior at each release.
   each reading from `-i`/stdin and writing to `-o`/stdout.
 - The `.NET` summariser `VerityFlow.Runtime` consumes the JSON dossier and
   prints a provenance health score with a letter grade.
+
+## [0.8.0] - 2024-05-21
+
+### Added
+
+- Confidence-weighted support strength: each relation carries a signed weight
+  (`supports` +1.0, `qualifies` +0.5, `context` +0.25, `refutes` -1.0) scaled by
