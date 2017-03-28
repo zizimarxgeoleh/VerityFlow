@@ -57,3 +57,10 @@ Entries describe user-visible behavior at each release.
   vocabulary, instead of failing later during scoring.
 
 ## [1.0.0] - 2025-12-02
+
+### Added
+
+- Stable command-line contract: `graph`, `score`, `dossier` and `validate`,
+  each reading from `-i`/stdin and writing to `-o`/stdout.
+- The `.NET` summariser `VerityFlow.Runtime` consumes the JSON dossier and
+  prints a provenance health score with a letter grade.
