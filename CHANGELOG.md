@@ -84,3 +84,10 @@ Entries describe user-visible behavior at each release.
 ## [0.6.0] - 2022-07-12
 
 ### Added
+
+- Evidence dossiers in Markdown and JSON, with a per-claim verdict
+  (`well-supported` through `refuted`).
+
+## [0.5.0] - 2021-06-29
+
+### Added
