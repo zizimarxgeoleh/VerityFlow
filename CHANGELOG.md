@@ -91,3 +91,10 @@ Entries describe user-visible behavior at each release.
 ## [0.5.0] - 2021-06-29
 
 ### Added
+
+- Citation coverage: the fraction of claims carrying at least one supporting
+  evidence link.
+
+## [0.4.0] - 2020-07-07
+
+### Added
