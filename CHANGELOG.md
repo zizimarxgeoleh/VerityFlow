@@ -98,3 +98,10 @@ Entries describe user-visible behavior at each release.
 ## [0.4.0] - 2020-07-07
 
 ### Added
+
+- Source diversity: normalised Shannon entropy over the provenance domains
+  behind a claim, with `www.` stripped from host names.
+
+## [0.3.0] - 2019-06-18
+
+### Added
