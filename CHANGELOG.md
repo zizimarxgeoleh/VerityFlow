@@ -78,3 +78,9 @@ Entries describe user-visible behavior at each release.
 ### Added
 
 - `validate` reports dangling links and orphan quotations and exits `2` when
+  either is found.
+- Markdown dossiers render verdict badges and a per-quotation evidence table.
+
+## [0.6.0] - 2022-07-12
+
+### Added
