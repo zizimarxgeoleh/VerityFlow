@@ -5,3 +5,4 @@ VerityFlow makes turns claims, quotations, sources and evidence links into navig
 
 ## Design principles
 1. **Traceable results** — every score connects to normalized input records and named calculations.
+2. **Portable artifacts** — JSON and Markdown reports travel cleanly through pull requests and release notes.
