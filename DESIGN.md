@@ -8,3 +8,4 @@ VerityFlow makes turns claims, quotations, sources and evidence links into navig
 2. **Portable artifacts** — JSON and Markdown reports travel cleanly through pull requests and release notes.
 3. **Compositional analysis** — parsers, domain models, metrics and renderers can evolve independently.
 4. **Useful defaults** — bundled fixtures demonstrate realistic workflows without configuration overhead.
+
