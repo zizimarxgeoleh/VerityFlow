@@ -9,3 +9,4 @@ native:
 	dotnet build runtime/VerityFlow.Runtime.csproj -c Release --nologo
 
 demo:
+	python -m verityflow --help
