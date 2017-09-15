@@ -36,3 +36,13 @@ Most citation tooling treats references as a flat bibliography: a list at the en
 1. **Uncited claims.** A confident sentence with no attached evidence reads exactly like a well-supported one. A flat reference list cannot tell them apart. A provenance graph can: an uncited claim is simply a node with no inbound supporting edge.
 
 2. **Monoculture citations.** Five citations that all trace back to the same author, publisher or domain give the *appearance* of thorough sourcing while providing almost none of its substance. VerityFlow measures the **diversity** of the provenance domains behind each claim, so a single-source claim cannot masquerade as broadly supported.
+
+3. **Buried contradictions.** When a source you cite actually *undercuts* your claim, that tension should be surfaced, not smoothed over. VerityFlow models `refutes` and `qualifies` relations as first-class edges and folds them into a signed support index, so a contested claim is flagged rather than quietly averaged away.
+
+By representing the whole apparatus as a directed graph, VerityFlow makes these properties *computable*. Coverage becomes a ratio. Diversity becomes an entropy. Support becomes a bounded index. And the dossier turns those numbers back into prose a human reviewer can act on.
+
+---
+
+## The mental model
+
+VerityFlow has exactly four node kinds and one edge kind. Keeping the vocabulary this small is intentional — it is what lets the whole tool stay dependency-free and auditable.
