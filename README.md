@@ -46,3 +46,13 @@ By representing the whole apparatus as a directed graph, VerityFlow makes these 
 ## The mental model
 
 VerityFlow has exactly four node kinds and one edge kind. Keeping the vocabulary this small is intentional — it is what lets the whole tool stay dependency-free and auditable.
+
+```
+   Source ──contains──▶ Quotation ──[relation]──▶ Claim
+   (paper,              (verbatim span,           (assertion under
+    dataset,             page/timestamp            scrutiny)
+    interview)           locator)
+```
+
+- A **Source** is anything citable: a paper, a dataset, an interview transcript, a webpage, a book. It carries a *tier* (`primary`, `secondary`, `tertiary`) and enough metadata to derive a **provenance domain** used for diversity scoring.
+- A **Quotation** is a verbatim span lifted from exactly one source, optionally with a *locator* (page number, paragraph marker, media timestamp).
