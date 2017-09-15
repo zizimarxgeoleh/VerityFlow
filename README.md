@@ -56,3 +56,13 @@ VerityFlow has exactly four node kinds and one edge kind. Keeping the vocabulary
 
 - A **Source** is anything citable: a paper, a dataset, an interview transcript, a webpage, a book. It carries a *tier* (`primary`, `secondary`, `tertiary`) and enough metadata to derive a **provenance domain** used for diversity scoring.
 - A **Quotation** is a verbatim span lifted from exactly one source, optionally with a *locator* (page number, paragraph marker, media timestamp).
+- A **Claim** is the assertion you are trying to justify. It has a *topic* and a *stance* (`asserted`, `disputed`, `hypothesis`).
+- An **EvidenceLink** is a typed, confidence-weighted edge from a quotation to a claim. Its *relation* is one of `supports`, `qualifies`, `context` or `refutes`.
+
+The ingestion unit is the **ResearchNote**: one claim bundled with the sources, quotations and links that back or challenge it. You author notes; VerityFlow folds a list of notes into a single de-duplicated **ProvenanceGraph**. Because nodes are keyed by deterministic ids, ingesting the same note twice is idempotent, and two notes that cite the same source merge that source into one shared node automatically.
+
+---
+
+## Architecture
+
+VerityFlow is a straight pipeline with four stages. Each stage is a pure function over the previous stage's output, which makes the whole thing trivially testable by hand and trivially reproducible.
