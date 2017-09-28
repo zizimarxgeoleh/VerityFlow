@@ -66,3 +66,12 @@ The ingestion unit is the **ResearchNote**: one claim bundled with the sources, 
 ## Architecture
 
 VerityFlow is a straight pipeline with four stages. Each stage is a pure function over the previous stage's output, which makes the whole thing trivially testable by hand and trivially reproducible.
+
+![Pipeline](docs/assets/pipeline.svg)
+
+```
+                    ┌──────────────────────────── Python core (verityflow) ────────────────────────────┐
+                    │                                                                                   │
+  research-notes    │   model.py            graph.py           scoring.py          dossier.py           │
+  .json  ─────────▶ │   parse & id ───▶ build_graph ───▶ score_graph ───▶ build_dossier ───▶ render_*   │
+                    │   (ResearchNote)   (ProvenanceGraph)  (ScoreReport)   (Dossier)      md / json     │
