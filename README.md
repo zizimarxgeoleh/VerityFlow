@@ -75,3 +75,13 @@ VerityFlow is a straight pipeline with four stages. Each stage is a pure functio
   research-notes    │   model.py            graph.py           scoring.py          dossier.py           │
   .json  ─────────▶ │   parse & id ───▶ build_graph ───▶ score_graph ───▶ build_dossier ───▶ render_*   │
                     │   (ResearchNote)   (ProvenanceGraph)  (ScoreReport)   (Dossier)      md / json     │
+                    │                                                                          │         │
+                    └──────────────────────────────────────────────────────────────────────── │ ───────┘
+                                                                                               │
+                                                                                     dossier.json
+                                                                                               │
+                    ┌──────────────── .NET runtime (VerityFlow.Runtime) ──────────────────────▼───────┐
+                    │   DossierReader.cs ──▶ Summariser.cs ──▶ Program.cs                                │
+                    │   parse JSON          health score + grade   text / json summary + exit code      │
+                    └───────────────────────────────────────────────────────────────────────────────┘
+```
