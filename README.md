@@ -85,3 +85,13 @@ VerityFlow is a straight pipeline with four stages. Each stage is a pure functio
                     │   parse JSON          health score + grade   text / json summary + exit code      │
                     └───────────────────────────────────────────────────────────────────────────────┘
 ```
+
+Module responsibilities:
+
+| Module | Responsibility |
+| --- | --- |
+| `verityflow/model.py` | Dataclasses for every node/edge, deterministic id synthesis, note parsing. |
+| `verityflow/graph.py` | Fold notes into a `ProvenanceGraph`; compute structural `GraphStats`; export adjacency/edge lists. |
+| `verityflow/scoring.py` | Citation coverage, source diversity (Shannon entropy), support strength (logistic squash). |
+| `verityflow/dossier.py` | Assemble per-claim verdicts and render Markdown/JSON dossiers. |
+| `verityflow/cli.py` | Argument parsing, stdin/stdout plumbing, four subcommands. |
