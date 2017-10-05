@@ -95,3 +95,13 @@ Module responsibilities:
 | `verityflow/scoring.py` | Citation coverage, source diversity (Shannon entropy), support strength (logistic squash). |
 | `verityflow/dossier.py` | Assemble per-claim verdicts and render Markdown/JSON dossiers. |
 | `verityflow/cli.py` | Argument parsing, stdin/stdout plumbing, four subcommands. |
+| `runtime/DossierReader.cs` | Parse the JSON dossier with `System.Text.Json`. |
+| `runtime/Summariser.cs` | Blend coverage/support/diversity into a health score and letter grade. |
+| `runtime/Program.cs` | CLI entry point; text or JSON output; grade-driven exit code. |
+
+The two runtimes are decoupled by a **JSON contract** — the dossier. Python never imports anything from .NET and vice versa. You can run the Python half alone, feed the dossier to your own tooling, or run the .NET summariser against any JSON that matches the dossier shape.
+
+---
+
+## Install and run
+
