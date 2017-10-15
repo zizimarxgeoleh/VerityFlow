@@ -115,3 +115,13 @@ python -m verityflow graph -i examples/research-notes.json
 
 # full score report
 python -m verityflow score -i examples/research-notes.json
+
+# a Markdown dossier
+python -m verityflow dossier -i examples/research-notes.json --title "Q3 Claims Audit"
+```
+
+.NET summariser (requires the .NET 9 SDK):
+
+```bash
+# build once
+dotnet build runtime/VerityFlow.Runtime.csproj -c Release --nologo
