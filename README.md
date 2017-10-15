@@ -105,3 +105,13 @@ The two runtimes are decoupled by a **JSON contract** — the dossier. Python ne
 
 ## Install and run
 
+There is nothing to install. Clone the repository and run the modules in place.
+
+Python core (requires Python 3.11+):
+
+```bash
+# structural stats for the bundled fixture
+python -m verityflow graph -i examples/research-notes.json
+
+# full score report
+python -m verityflow score -i examples/research-notes.json
