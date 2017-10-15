@@ -125,3 +125,13 @@ python -m verityflow dossier -i examples/research-notes.json --title "Q3 Claims 
 ```bash
 # build once
 dotnet build runtime/VerityFlow.Runtime.csproj -c Release --nologo
+
+# pipe a JSON dossier straight through the summariser
+python -m verityflow dossier -i examples/research-notes.json --format json \
+  | dotnet run --project runtime/VerityFlow.Runtime.csproj -c Release --no-build
+```
+
+The `Makefile` wraps all of this: `make graph`, `make score`, `make dossier`, `make summary`, `make build`, `make validate`.
+
+---
+
