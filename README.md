@@ -154,3 +154,13 @@ Input is a single JSON array of research notes (or an object with a `notes` arra
       "author": "DeployMetrics",
       "year": 2023,
       "publisher": "DeployMetrics",
+      "url": "https://deploymetrics.example/benchmarks",
+      "tier": "primary"                                    // primary | secondary | tertiary
+    }
+  ],
+  "quotations": [
+    {
+      "source_title": "Progressive Delivery Benchmarks",   // links quote to a source by title...
+      "text": "Pipelines with flags rolled back 42% less often.",
+      "locator": "fig 2"                                   // page / timestamp / paragraph
+    }
