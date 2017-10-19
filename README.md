@@ -135,3 +135,13 @@ The `Makefile` wraps all of this: `make graph`, `make score`, `make dossier`, `m
 
 ---
 
+## The data schema
+
+Input is a single JSON array of research notes (or an object with a `notes` array). Each note has the following shape. Every id is optional — omit it and VerityFlow synthesises a stable id by hashing the content, so the same input always produces the same graph.
+
+```jsonc
+{
+  "claim": {
+    "text": "Feature flags reduce rollback frequency.",   // required
+    "topic": "release-engineering",                        // default: "general"
+    "author": "",                                          // optional
