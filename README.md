@@ -145,3 +145,12 @@ Input is a single JSON array of research notes (or an object with a `notes` arra
     "text": "Feature flags reduce rollback frequency.",   // required
     "topic": "release-engineering",                        // default: "general"
     "author": "",                                          // optional
+    "stance": "asserted"                                   // asserted | disputed | hypothesis
+  },
+  "sources": [
+    {
+      "title": "Progressive Delivery Benchmarks",          // required
+      "kind": "dataset",                                   // document | dataset | interview | webpage | book
+      "author": "DeployMetrics",
+      "year": 2023,
+      "publisher": "DeployMetrics",
