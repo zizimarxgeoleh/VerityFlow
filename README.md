@@ -164,3 +164,13 @@ Input is a single JSON array of research notes (or an object with a `notes` arra
       "text": "Pipelines with flags rolled back 42% less often.",
       "locator": "fig 2"                                   // page / timestamp / paragraph
     }
+  ],
+  "links": [
+    {
+      "quotation_text": "Pipelines with flags rolled back 42% less often.",
+      "relation": "supports",                              // supports | qualifies | context | refutes
+      "confidence": 0.85                                   // 0..1
+    }
+  ]
+}
+```
