@@ -204,3 +204,13 @@ Compile notes and inspect the graph structure. The `--emit` flag selects what to
 - `full` — the entire serialised graph (all nodes and links).
 
 ### `score`
+
+Compute the full `ScoreReport`: graph-level coverage, mean diversity and mean support, plus a per-claim breakdown with `covered`, `contested`, `diversity`, `support_raw`, `support_index`, source/domain counts and supporting/refuting tallies.
+
+### `dossier`
+
+Assemble the human-facing evidence dossier. `--format markdown` (default) renders a self-contained report with a summary banner, a graph-at-a-glance table and a per-claim section that lists every quotation with its relation, confidence, source and tier. `--format json` emits the same content as a structured document — this is the exact input the .NET summariser expects. `--title` sets the report heading.
+
+### `validate`
+
+Structural pre-flight check. Reports dangling links (edges pointing at a missing claim or quotation) and orphan quotations (spans no link references). Exits `0` when the bundle is clean and `2` when anomalies are found, so it drops straight into a CI gate.
