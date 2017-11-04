@@ -174,3 +174,13 @@ Input is a single JSON array of research notes (or an object with a `notes` arra
   ]
 }
 ```
+
+**Reference resolution.** Quotations may reference their source by `source_id` or, more ergonomically, by `source_title`. Links may reference their quotation by `quotation_id` or by `quotation_text`. VerityFlow resolves the friendly forms into ids during parsing. If a reference cannot be resolved, the resulting edge is *dangling* and is reported by `validate` rather than crashing the pipeline.
+
+**Relation vocabulary and weights.** Each relation carries a signed weight that feeds support strength:
+
+| Relation | Weight | Meaning |
+| --- | --- | --- |
+| `supports` | `+1.0` | The quotation directly backs the claim. |
+| `qualifies` | `+0.5` | The quotation supports the claim under conditions. |
+| `context` | `+0.25` | The quotation provides background, not direct proof. |
