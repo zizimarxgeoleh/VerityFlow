@@ -184,3 +184,13 @@ Input is a single JSON array of research notes (or an object with a `notes` arra
 | `supports` | `+1.0` | The quotation directly backs the claim. |
 | `qualifies` | `+0.5` | The quotation supports the claim under conditions. |
 | `context` | `+0.25` | The quotation provides background, not direct proof. |
+| `refutes` | `-1.0` | The quotation contradicts the claim. |
+
+An invalid relation is a hard error at parse time — the vocabulary is closed on purpose.
+
+---
+
+## Command reference
+
+All commands read from `--input`/`-i` (a file or `-` for stdin) and write to `--output`/`-o` (a file or `-` for stdout).
+
