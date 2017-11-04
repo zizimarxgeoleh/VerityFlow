@@ -194,3 +194,13 @@ An invalid relation is a hard error at parse time — the vocabulary is closed o
 
 All commands read from `--input`/`-i` (a file or `-` for stdin) and write to `--output`/`-o` (a file or `-` for stdout).
 
+### `graph`
+
+Compile notes and inspect the graph structure. The `--emit` flag selects what to print:
+
+- `stats` (default) — node/edge counts, relation and tier histograms, dangling/orphan counts, average quotations and sources per claim.
+- `adjacency` — a `claim_id → [source_id, ...]` map, handy for feeding external graph viewers.
+- `edges` — a flat edge list (`claim ← quotation ← source`) for tabular export.
+- `full` — the entire serialised graph (all nodes and links).
+
+### `score`
