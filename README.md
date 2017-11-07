@@ -214,3 +214,12 @@ Assemble the human-facing evidence dossier. `--format markdown` (default) render
 ### `validate`
 
 Structural pre-flight check. Reports dangling links (edges pointing at a missing claim or quotation) and orphan quotations (spans no link references). Exits `0` when the bundle is clean and `2` when anomalies are found, so it drops straight into a CI gate.
+
+---
+
+## Scoring algorithms in depth
+
+### Citation coverage
+
+Coverage is the fraction of claims that carry **at least one supporting (positive-weight) evidence link**. A claim backed only by `refutes` edges is *not* covered — it is contested. Formally, for a graph with claim set `C`:
+
