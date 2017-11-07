@@ -233,3 +233,13 @@ Coverage is the bluntest metric and the first thing a reviewer should look at. A
 
 Diversity is the **normalised Shannon entropy** of the provenance *domains* behind a claim. A domain is derived from a source: the URL host if present (stripped of `www.`), else the publisher, else the author. For a claim whose supporting sources fall into domains with counts `n₁ … n_k` (total `N`):
 
+```
+H     = -Σ (nᵢ / N) · log₂(nᵢ / N)
+diversity = H / log₂(k)          for k > 1, else 0
+```
+
+The normalisation by `log₂(k)` maps diversity to `[0, 1]`: a claim cited by a single domain scores `0`; a claim cited equally by `k` distinct domains scores `1`. This is why in the bundled fixture the async-standups claim (three independent domains, one quote each) scores `1.0` while the feature-flags claim (two quotes, one domain) scores `0.0` — same quote count, very different provenance breadth.
+
+### Claim support strength
+
+Support strength condenses every link on a claim into a single bounded index. First it sums the signed, confidence-weighted relation weights:
