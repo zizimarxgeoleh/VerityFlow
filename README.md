@@ -223,3 +223,13 @@ Structural pre-flight check. Reports dangling links (edges pointing at a missing
 
 Coverage is the fraction of claims that carry **at least one supporting (positive-weight) evidence link**. A claim backed only by `refutes` edges is *not* covered — it is contested. Formally, for a graph with claim set `C`:
 
+```
+coverage = |{ c ∈ C : ∃ link l on c with weight(l.relation) > 0 }| / |C|
+```
+
+Coverage is the bluntest metric and the first thing a reviewer should look at. A report at 60% coverage has, by definition, 40% of its claims resting on nothing.
+
+### Source diversity
+
+Diversity is the **normalised Shannon entropy** of the provenance *domains* behind a claim. A domain is derived from a source: the URL host if present (stripped of `www.`), else the publisher, else the author. For a claim whose supporting sources fall into domains with counts `n₁ … n_k` (total `N`):
+
