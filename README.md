@@ -243,3 +243,13 @@ The normalisation by `log₂(k)` maps diversity to `[0, 1]`: a claim cited by a 
 ### Claim support strength
 
 Support strength condenses every link on a claim into a single bounded index. First it sums the signed, confidence-weighted relation weights:
+
+```
+raw = Σ  RELATION_WEIGHT(l.relation) · clamp(l.confidence, 0, 1)
+```
+
+Then it squashes `raw` through a logistic function so the index lives in `(0, 1)`:
+
+```
+support_index = 1 / (1 + e^(−raw))
+```
