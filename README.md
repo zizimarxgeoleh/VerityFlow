@@ -253,3 +253,13 @@ Then it squashes `raw` through a logistic function so the index lives in `(0, 1)
 ```
 support_index = 1 / (1 + e^(−raw))
 ```
+
+The squashing gives three intuitive anchors: a claim with **no links** lands at exactly `0.5` (genuinely neutral), a **strongly supported** claim tends toward `1.0`, and a **strongly refuted** claim tends toward `0.0`. Because confidence multiplies the weight, a hedged `supports` at `0.6` confidence contributes less than a firm one at `0.95`.
+
+These three metrics are orthogonal by construction: coverage answers *is it cited at all*, diversity answers *is it cited broadly*, and support answers *how strong is the net evidence*. A claim can be covered but narrow (single-domain), or diverse but weak (lots of low-confidence qualifiers). The dossier verdict combines all three.
+
+---
+
+## The dossier format
+
+The dossier is where numbers become judgements. For each claim VerityFlow assigns a **verdict** from the interplay of coverage, contestation, support and diversity:
