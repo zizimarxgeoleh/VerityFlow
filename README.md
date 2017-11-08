@@ -263,3 +263,13 @@ These three metrics are orthogonal by construction: coverage answers *is it cite
 ## The dossier format
 
 The dossier is where numbers become judgements. For each claim VerityFlow assigns a **verdict** from the interplay of coverage, contestation, support and diversity:
+
+| Verdict | Condition |
+| --- | --- |
+| `well-supported` | covered, `support_index ≥ 0.80`, and `≥ 2` provenance domains |
+| `supported` | covered, `support_index ≥ 0.60` |
+| `weakly-supported` | covered, but `support_index < 0.60` |
+| `contested` | has both supporting and refuting links |
+| `unsupported` | no supporting link |
+| `refuted` | refuting links and no supporting link |
+
