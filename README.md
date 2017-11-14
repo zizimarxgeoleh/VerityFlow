@@ -273,3 +273,13 @@ The dossier is where numbers become judgements. For each claim VerityFlow assign
 | `unsupported` | no supporting link |
 | `refuted` | refuting links and no supporting link |
 
+The Markdown dossier opens with a summary banner (coverage, mean support, mean diversity), a graph-at-a-glance table, and then one section per claim — sorted by descending support so the strongest claims lead — with a verdict badge, the scores, and a table of every quotation, relation, confidence and source. The JSON dossier carries the identical information in a machine-readable tree, and is the contract consumed by the .NET summariser.
+
+---
+
+## The .NET summariser
+
+`VerityFlow.Runtime` is a companion, not a dependency. It reads a JSON dossier and produces an **executive summary**: verdict tallies, the weakest claims that need more citations, and a single **provenance health score** with a letter grade. The health score blends the three graph-level metrics:
+
+```
+health = 0.40 · coverage + 0.35 · mean_support + 0.25 · mean_diversity
