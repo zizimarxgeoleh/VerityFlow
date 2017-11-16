@@ -293,3 +293,12 @@ The weighting reflects editorial priorities: coverage first (an uncited claim is
 ## CLI recipes
 
 **Audit a report before publishing.** Fail the build if any claim is uncited:
+
+```bash
+python -m verityflow validate -i notes.json && \
+python -m verityflow dossier -i notes.json --format json \
+  | dotnet run --project runtime/VerityFlow.Runtime.csproj -c Release --no-build
+# non-zero exit from either step blocks the publish
+```
+
+**Export the graph skeleton for visualisation:**
