@@ -322,3 +322,13 @@ cat notes.json | python -m verityflow dossier --format json \
 ```
 
 **Find your weakest claims fast** — the summariser's text output lists the five lowest-support claims with their quote counts.
+
+---
+
+## Operations and exit codes
+
+VerityFlow is a batch tool: it reads, computes, writes and exits. It has no daemon, no state on disk beyond what you pass it, and makes no network calls.
+
+| Component | Exit `0` | Exit `1` | Exit `2` |
+| --- | --- | --- | --- |
+| `verityflow` (most commands) | success | bad input / invalid relation | — |
