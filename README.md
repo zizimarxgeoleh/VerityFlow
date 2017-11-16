@@ -332,3 +332,13 @@ VerityFlow is a batch tool: it reads, computes, writes and exits. It has no daem
 | Component | Exit `0` | Exit `1` | Exit `2` |
 | --- | --- | --- | --- |
 | `verityflow` (most commands) | success | bad input / invalid relation | — |
+| `verityflow validate` | clean bundle | bad input | anomalies found |
+| `VerityFlow.Runtime` | grade ≥ D | read/parse error | grade F |
+
+Because both halves signal failure through exit codes, the pipeline composes cleanly with `&&` and with CI job steps. All parse errors are written to `stderr` with an `error:` prefix so stdout stays a clean data channel.
+
+---
+
+## Extension seams
+
+VerityFlow is small on purpose, but three seams are designed for extension:
