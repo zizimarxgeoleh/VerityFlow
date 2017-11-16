@@ -302,3 +302,13 @@ python -m verityflow dossier -i notes.json --format json \
 ```
 
 **Export the graph skeleton for visualisation:**
+
+```bash
+python -m verityflow graph -i notes.json --emit adjacency -o graph-adjacency.json
+python -m verityflow graph -i notes.json --emit edges -o graph-edges.json
+```
+
+**Produce a reviewer-ready Markdown dossier with a custom title:**
+
+```bash
+python -m verityflow dossier -i notes.json --title "Whitepaper v2 Evidence" -o dossier.md
