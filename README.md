@@ -312,3 +312,13 @@ python -m verityflow graph -i notes.json --emit edges -o graph-edges.json
 
 ```bash
 python -m verityflow dossier -i notes.json --title "Whitepaper v2 Evidence" -o dossier.md
+```
+
+**Pipe everything through stdin/stdout** (no temp files):
+
+```bash
+cat notes.json | python -m verityflow dossier --format json \
+  | dotnet run --project runtime/VerityFlow.Runtime.csproj -c Release --no-build -- --format json
+```
+
+**Find your weakest claims fast** — the summariser's text output lists the five lowest-support claims with their quote counts.
