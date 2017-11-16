@@ -283,3 +283,13 @@ The Markdown dossier opens with a summary banner (coverage, mean support, mean d
 
 ```
 health = 0.40 · coverage + 0.35 · mean_support + 0.25 · mean_diversity
+grade  = A (≥0.85) · B (≥0.70) · C (≥0.55) · D (≥0.40) · F (otherwise)
+```
+
+The weighting reflects editorial priorities: coverage first (an uncited claim is the worst failure), then support strength, then diversity as a tie-breaker on rigour. The runtime exits `2` on an `F` grade, which lets you wire it into a publication gate. Output is `--format text` (a terminal-friendly report) or `--format json` (structured, for dashboards).
+
+---
+
+## CLI recipes
+
+**Audit a report before publishing.** Fail the build if any claim is uncited:
