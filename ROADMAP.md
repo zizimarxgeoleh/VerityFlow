@@ -6,3 +6,4 @@
 - [x] Support-strength calculation
 - [x] Markdown and JSON evidence dossiers
 
+## Next horizons
