@@ -5,3 +5,4 @@
 - [x] Citation coverage and source-diversity analysis
 - [x] Support-strength calculation
 - [x] Markdown and JSON evidence dossiers
+
