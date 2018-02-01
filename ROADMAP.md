@@ -7,3 +7,4 @@
 - [x] Markdown and JSON evidence dossiers
 
 ## Next horizons
+- [ ] Comparative scenario collections
