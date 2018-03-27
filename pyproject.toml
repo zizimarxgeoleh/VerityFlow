@@ -2,3 +2,4 @@
 name = "verityflow"
 version = "5.0.0"
 description = "Claim Provenance Graph Builder"
+requires-python = ">=3.11"
