@@ -6,3 +6,7 @@ coverage, source diversity and claim support strength to emit Markdown/JSON
 evidence dossiers.
 
 The package is dependency-free and relies only on the Python standard library.
+"""
+
+from .model import (
+    Claim,
