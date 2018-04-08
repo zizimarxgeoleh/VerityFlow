@@ -10,3 +10,8 @@ The package is dependency-free and relies only on the Python standard library.
 
 from .model import (
     Claim,
+    Source,
+    Quotation,
+    EvidenceLink,
+    ResearchNote,
+    ProvenanceGraph,
