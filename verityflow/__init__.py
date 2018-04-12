@@ -15,3 +15,7 @@ from .model import (
     EvidenceLink,
     ResearchNote,
     ProvenanceGraph,
+)
+from .graph import build_graph, GraphStats
+from .scoring import (
+    citation_coverage,
