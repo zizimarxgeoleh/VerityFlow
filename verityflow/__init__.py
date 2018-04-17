@@ -27,3 +27,7 @@ from .dossier import build_dossier, render_markdown, render_json
 
 __all__ = [
     "Claim",
+    "Source",
+    "Quotation",
+    "EvidenceLink",
+    "ResearchNote",
