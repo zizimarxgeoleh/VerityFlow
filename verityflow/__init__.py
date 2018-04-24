@@ -31,3 +31,8 @@ __all__ = [
     "Quotation",
     "EvidenceLink",
     "ResearchNote",
+    "ProvenanceGraph",
+    "build_graph",
+    "GraphStats",
+    "citation_coverage",
+    "source_diversity",
