@@ -24,3 +24,14 @@ from .graph import build_graph, compute_stats, to_adjacency, to_edge_list
 from .model import load_notes
 from .scoring import score_graph
 from .dossier import build_dossier, render_json, render_markdown
+
+
+def _read_input(path: str) -> Any:
+    if path == "-" or not path:
+        return json.load(sys.stdin)
+    with open(path, "r", encoding="utf-8") as fh:
+        return json.load(fh)
+
+
+def _write_output(path: str, text: str) -> None:
+    if path == "-" or not path:
