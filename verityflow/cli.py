@@ -35,3 +35,13 @@ def _read_input(path: str) -> Any:
 
 def _write_output(path: str, text: str) -> None:
     if path == "-" or not path:
+        sys.stdout.write(text)
+        if not text.endswith("\n"):
+            sys.stdout.write("\n")
+        return
+    with open(path, "w", encoding="utf-8") as fh:
+        fh.write(text)
+
+
+def _load_graph(path: str):
+    payload = _read_input(path)
