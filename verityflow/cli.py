@@ -76,3 +76,14 @@ def cmd_score(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_dossier(args: argparse.Namespace) -> int:
+    graph = _load_graph(args.input)
+    dossier = build_dossier(graph, title=args.title)
+    if args.format == "json":
+        text = json.dumps(render_json(dossier), indent=2, ensure_ascii=False)
+    else:
+        text = render_markdown(dossier)
+    _write_output(args.output, text)
+    return 0
+
+
