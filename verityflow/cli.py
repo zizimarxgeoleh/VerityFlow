@@ -45,3 +45,14 @@ def _write_output(path: str, text: str) -> None:
 
 def _load_graph(path: str):
     payload = _read_input(path)
+    if isinstance(payload, dict) and "notes" in payload:
+        payload = payload["notes"]
+    if not isinstance(payload, list):
+        raise ValueError("input must be a JSON array of research notes")
+    notes = load_notes(payload)
+    return build_graph(notes)
+
+
+def cmd_graph(args: argparse.Namespace) -> int:
+    graph = _load_graph(args.input)
+    if args.emit == "stats":
