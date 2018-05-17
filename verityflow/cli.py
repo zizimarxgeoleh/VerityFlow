@@ -56,3 +56,13 @@ def _load_graph(path: str):
 def cmd_graph(args: argparse.Namespace) -> int:
     graph = _load_graph(args.input)
     if args.emit == "stats":
+        payload = compute_stats(graph).to_dict()
+    elif args.emit == "adjacency":
+        payload = to_adjacency(graph)
+    elif args.emit == "edges":
+        payload = to_edge_list(graph)
+    else:  # full
+        payload = graph.to_dict()
+    _write_output(args.output, json.dumps(payload, indent=2, ensure_ascii=False))
+    return 0
+
