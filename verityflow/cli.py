@@ -66,3 +66,13 @@ def cmd_graph(args: argparse.Namespace) -> int:
     _write_output(args.output, json.dumps(payload, indent=2, ensure_ascii=False))
     return 0
 
+
+def cmd_score(args: argparse.Namespace) -> int:
+    graph = _load_graph(args.input)
+    report = score_graph(graph)
+    _write_output(
+        args.output, json.dumps(report.to_dict(), indent=2, ensure_ascii=False)
+    )
+    return 0
+
+
