@@ -87,3 +87,13 @@ def cmd_dossier(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_validate(args: argparse.Namespace) -> int:
+    graph = _load_graph(args.input)
+    dangling = graph.dangling_links()
+    orphans = graph.orphan_quotations()
+    report = {
+        "ok": not dangling and not orphans,
+        "claims": len(graph.claims),
+        "dangling_links": [l.id for l in dangling],
+        "orphan_quotations": [q.id for q in orphans],
+    }
