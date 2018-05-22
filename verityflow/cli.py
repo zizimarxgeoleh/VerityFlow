@@ -97,3 +97,14 @@ def cmd_validate(args: argparse.Namespace) -> int:
         "dangling_links": [l.id for l in dangling],
         "orphan_quotations": [q.id for q in orphans],
     }
+    _write_output(args.output, json.dumps(report, indent=2, ensure_ascii=False))
+    return 0 if report["ok"] else 2
+
+
+def build_parser() -> argparse.ArgumentParser:
+    p = argparse.ArgumentParser(
+        prog="verityflow",
+        description="Claim Provenance Graph Builder — compile research notes "
+        "into an evidence graph and emit dossiers.",
+    )
+    p.add_argument("--version", action="store_true", help="print version and exit")
