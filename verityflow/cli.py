@@ -108,3 +108,13 @@ def build_parser() -> argparse.ArgumentParser:
         "into an evidence graph and emit dossiers.",
     )
     p.add_argument("--version", action="store_true", help="print version and exit")
+    sub = p.add_subparsers(dest="command")
+
+    def add_io(sp: argparse.ArgumentParser) -> None:
+        sp.add_argument("-i", "--input", default="-", help="input JSON file or '-'")
+        sp.add_argument("-o", "--output", default="-", help="output file or '-'")
+
+    g = sub.add_parser("graph", help="compile notes and inspect graph structure")
+    add_io(g)
+    g.add_argument(
+        "--emit",
