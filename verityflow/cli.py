@@ -118,3 +118,13 @@ def build_parser() -> argparse.ArgumentParser:
     add_io(g)
     g.add_argument(
         "--emit",
+        choices=["stats", "adjacency", "edges", "full"],
+        default="stats",
+        help="what to emit (default: stats)",
+    )
+    g.set_defaults(func=cmd_graph)
+
+    s = sub.add_parser("score", help="compute coverage, diversity and support")
+    add_io(s)
+    s.set_defaults(func=cmd_score)
+
