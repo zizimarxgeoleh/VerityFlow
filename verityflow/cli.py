@@ -128,3 +128,14 @@ def build_parser() -> argparse.ArgumentParser:
     add_io(s)
     s.set_defaults(func=cmd_score)
 
+    d = sub.add_parser("dossier", help="render an evidence dossier")
+    add_io(d)
+    d.add_argument("--title", default="Evidence Dossier", help="dossier title")
+    d.add_argument(
+        "--format", choices=["markdown", "json"], default="markdown", help="output format"
+    )
+    d.set_defaults(func=cmd_dossier)
+
+    v = sub.add_parser("validate", help="check note bundles for anomalies")
+    add_io(v)
+    v.set_defaults(func=cmd_validate)
