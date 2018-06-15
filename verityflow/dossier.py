@@ -17,3 +17,15 @@ from .scoring import ClaimScore, ScoreReport, score_graph
 
 
 def _verdict(score: ClaimScore) -> str:
+    if score.contested and not score.covered:
+        return "refuted"
+    if score.contested and score.covered:
+        return "contested"
+    if not score.covered:
+        return "unsupported"
+    if score.support_index >= 0.8 and score.n_domains >= 2:
+        return "well-supported"
+    if score.support_index >= 0.6:
+        return "supported"
+    return "weakly-supported"
+
