@@ -29,3 +29,14 @@ def _verdict(score: ClaimScore) -> str:
         return "supported"
     return "weakly-supported"
 
+
+@dataclass
+class DossierEntry:
+    claim_id: str
+    claim_text: str
+    topic: str
+    verdict: str
+    support_index: float
+    diversity: float
+    quotations: List[Dict[str, Any]] = field(default_factory=list)
+
