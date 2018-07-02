@@ -63,3 +63,15 @@ def build_dossier(graph: ProvenanceGraph, title: str = "Evidence Dossier") -> Do
         for link in graph.links_for_claim(cid):
             q = graph.quotations.get(link.quotation_id)
             if not q:
+                continue
+            src = graph.sources.get(q.source_id)
+            quotes.append(
+                {
+                    "relation": link.relation,
+                    "confidence": round(link.confidence, 2),
+                    "text": q.text,
+                    "locator": q.locator,
+                    "source_title": src.title if src else "(unknown source)",
+                    "source_tier": src.tier if src else "",
+                    "source_domain": src.domain() if src else "",
+                }
