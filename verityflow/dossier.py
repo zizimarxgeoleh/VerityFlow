@@ -52,3 +52,14 @@ class Dossier:
 
 
 def build_dossier(graph: ProvenanceGraph, title: str = "Evidence Dossier") -> Dossier:
+    """Assemble a :class:`Dossier` from a compiled *graph*."""
+    report: ScoreReport = score_graph(graph)
+    score_by_claim = {c.claim_id: c for c in report.claims}
+
+    entries: List[DossierEntry] = []
+    for cid, claim in graph.claims.items():
+        cs = score_by_claim[cid]
+        quotes: List[Dict[str, Any]] = []
+        for link in graph.links_for_claim(cid):
+            q = graph.quotations.get(link.quotation_id)
+            if not q:
