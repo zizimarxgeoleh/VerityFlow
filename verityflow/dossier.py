@@ -40,3 +40,15 @@ class DossierEntry:
     diversity: float
     quotations: List[Dict[str, Any]] = field(default_factory=list)
 
+
+@dataclass
+class Dossier:
+    title: str
+    coverage: float
+    mean_support: float
+    mean_diversity: float
+    stats: Dict[str, Any]
+    entries: List[DossierEntry] = field(default_factory=list)
+
+
+def build_dossier(graph: ProvenanceGraph, title: str = "Evidence Dossier") -> Dossier:
