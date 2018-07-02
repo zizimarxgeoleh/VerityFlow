@@ -75,3 +75,14 @@ def build_dossier(graph: ProvenanceGraph, title: str = "Evidence Dossier") -> Do
                     "source_tier": src.tier if src else "",
                     "source_domain": src.domain() if src else "",
                 }
+            )
+        entries.append(
+            DossierEntry(
+                claim_id=cid,
+                claim_text=claim.text,
+                topic=claim.topic,
+                verdict=_verdict(cs),
+                support_index=cs.support_index,
+                diversity=cs.diversity,
+                quotations=quotes,
+            )
