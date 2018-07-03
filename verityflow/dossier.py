@@ -97,3 +97,15 @@ def build_dossier(graph: ProvenanceGraph, title: str = "Evidence Dossier") -> Do
         mean_diversity=round(report.mean_diversity, 4),
         stats=compute_stats(graph).to_dict(),
         entries=entries,
+    )
+
+
+def render_json(dossier: Dossier) -> Dict[str, Any]:
+    """Return a JSON-serialisable dict for *dossier*."""
+    return {
+        "title": dossier.title,
+        "summary": {
+            "coverage": dossier.coverage,
+            "mean_support": dossier.mean_support,
+            "mean_diversity": dossier.mean_diversity,
+        },
