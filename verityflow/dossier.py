@@ -120,3 +120,15 @@ def render_json(dossier: Dossier) -> Dict[str, Any]:
                 "diversity": e.diversity,
                 "quotations": e.quotations,
             }
+            for e in dossier.entries
+        ],
+    }
+
+
+_VERDICT_BADGE = {
+    "well-supported": "🟢",
+    "supported": "🟢",
+    "weakly-supported": "🟡",
+    "contested": "🟠",
+    "unsupported": "⚪",
+    "refuted": "🔴",
