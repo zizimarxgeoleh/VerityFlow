@@ -86,3 +86,14 @@ def build_dossier(graph: ProvenanceGraph, title: str = "Evidence Dossier") -> Do
                 diversity=cs.diversity,
                 quotations=quotes,
             )
+        )
+
+    entries.sort(key=lambda e: (-e.support_index, e.claim_id))
+
+    return Dossier(
+        title=title,
+        coverage=report.coverage,
+        mean_support=round(report.mean_support, 4),
+        mean_diversity=round(report.mean_diversity, 4),
+        stats=compute_stats(graph).to_dict(),
+        entries=entries,
