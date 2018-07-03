@@ -109,3 +109,14 @@ def render_json(dossier: Dossier) -> Dict[str, Any]:
             "mean_support": dossier.mean_support,
             "mean_diversity": dossier.mean_diversity,
         },
+        "graph_stats": dossier.stats,
+        "entries": [
+            {
+                "claim_id": e.claim_id,
+                "claim_text": e.claim_text,
+                "topic": e.topic,
+                "verdict": e.verdict,
+                "support_index": e.support_index,
+                "diversity": e.diversity,
+                "quotations": e.quotations,
+            }
