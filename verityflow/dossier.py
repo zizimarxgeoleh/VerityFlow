@@ -132,3 +132,14 @@ _VERDICT_BADGE = {
     "contested": "🟠",
     "unsupported": "⚪",
     "refuted": "🔴",
+}
+
+
+def render_markdown(dossier: Dossier) -> str:
+    """Render *dossier* to a self-contained Markdown report."""
+    lines: List[str] = []
+    lines.append(f"# {dossier.title}")
+    lines.append("")
+    lines.append(
+        f"> Citation coverage **{dossier.coverage:.0%}** · "
+        f"mean support **{dossier.mean_support:.2f}** · "
