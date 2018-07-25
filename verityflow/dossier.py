@@ -143,3 +143,15 @@ def render_markdown(dossier: Dossier) -> str:
     lines.append(
         f"> Citation coverage **{dossier.coverage:.0%}** · "
         f"mean support **{dossier.mean_support:.2f}** · "
+        f"mean diversity **{dossier.mean_diversity:.2f}**"
+    )
+    lines.append("")
+
+    st = dossier.stats
+    lines.append("## Graph at a glance")
+    lines.append("")
+    lines.append("| Metric | Value |")
+    lines.append("| --- | --- |")
+    lines.append(f"| Claims | {st['claims']} |")
+    lines.append(f"| Sources | {st['sources']} |")
+    lines.append(f"| Quotations | {st['quotations']} |")
