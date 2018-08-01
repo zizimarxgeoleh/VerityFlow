@@ -155,3 +155,14 @@ def render_markdown(dossier: Dossier) -> str:
     lines.append(f"| Claims | {st['claims']} |")
     lines.append(f"| Sources | {st['sources']} |")
     lines.append(f"| Quotations | {st['quotations']} |")
+    lines.append(f"| Evidence links | {st['links']} |")
+    lines.append(f"| Dangling links | {st['dangling_links']} |")
+    lines.append(f"| Orphan quotations | {st['orphan_quotations']} |")
+    lines.append("")
+
+    lines.append("## Claims")
+    lines.append("")
+    for e in dossier.entries:
+        badge = _VERDICT_BADGE.get(e.verdict, "•")
+        lines.append(f"### {badge} {e.claim_text}")
+        lines.append("")
