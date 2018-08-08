@@ -25,3 +25,11 @@ from .model import (
 class GraphStats:
     """Structural summary of a compiled provenance graph."""
 
+    claims: int
+    sources: int
+    quotations: int
+    links: int
+    relations: Dict[str, int]
+    source_tiers: Dict[str, int]
+    dangling_links: int
+    orphan_quotations: int
