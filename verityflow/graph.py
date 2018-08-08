@@ -41,3 +41,11 @@ class GraphStats:
 
 
 def build_graph(notes: Iterable[ResearchNote]) -> ProvenanceGraph:
+    """Compile *notes* into a :class:`ProvenanceGraph`.
+
+    Nodes are keyed by id; the last definition wins on collision, which keeps
+    the operation idempotent when the same note is ingested twice.
+    """
+    graph = ProvenanceGraph()
+    seen_link_ids = set()
+
