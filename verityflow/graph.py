@@ -33,3 +33,11 @@ class GraphStats:
     source_tiers: Dict[str, int]
     dangling_links: int
     orphan_quotations: int
+    avg_quotations_per_claim: float
+    avg_sources_per_claim: float
+
+    def to_dict(self) -> Dict[str, Any]:
+        return asdict(self)
+
+
+def build_graph(notes: Iterable[ResearchNote]) -> ProvenanceGraph:
