@@ -17,3 +17,11 @@ from .model import (
     ProvenanceGraph,
     Quotation,
     ResearchNote,
+    Source,
+)
+
+
+@dataclass
+class GraphStats:
+    """Structural summary of a compiled provenance graph."""
+
