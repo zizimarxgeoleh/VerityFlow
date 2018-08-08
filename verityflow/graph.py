@@ -9,3 +9,11 @@ quotations) are surfaced through :class:`GraphStats` rather than raising.
 from __future__ import annotations
 
 from collections import Counter
+from dataclasses import dataclass, asdict
+from typing import Any, Dict, Iterable, List
+
+from .model import (
+    EvidenceLink,
+    ProvenanceGraph,
+    Quotation,
+    ResearchNote,
