@@ -49,3 +49,11 @@ def build_graph(notes: Iterable[ResearchNote]) -> ProvenanceGraph:
     graph = ProvenanceGraph()
     seen_link_ids = set()
 
+    for note in notes:
+        graph.claims[note.claim.id] = note.claim
+        for s in note.sources:
+            graph.sources[s.id] = s
+        for q in note.quotations:
+            graph.quotations[q.id] = q
+        for l in note.links:
+            if l.id in seen_link_ids:
