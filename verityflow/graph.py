@@ -65,3 +65,11 @@ def build_graph(notes: Iterable[ResearchNote]) -> ProvenanceGraph:
 
 
 def compute_stats(graph: ProvenanceGraph) -> GraphStats:
+    """Derive a :class:`GraphStats` snapshot from *graph*."""
+    relations = Counter(l.relation for l in graph.links)
+    tiers = Counter(s.tier for s in graph.sources.values())
+
+    n_claims = len(graph.claims)
+    total_quotes = sum(len(graph.quotations_for_claim(c)) for c in graph.claims)
+    total_sources = sum(len(graph.sources_for_claim(c)) for c in graph.claims)
+
