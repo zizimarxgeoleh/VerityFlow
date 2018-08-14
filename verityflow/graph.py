@@ -80,3 +80,11 @@ def compute_stats(graph: ProvenanceGraph) -> GraphStats:
         links=len(graph.links),
         relations=dict(relations),
         source_tiers=dict(tiers),
+        dangling_links=len(graph.dangling_links()),
+        orphan_quotations=len(graph.orphan_quotations()),
+        avg_quotations_per_claim=round(total_quotes / n_claims, 3) if n_claims else 0.0,
+        avg_sources_per_claim=round(total_sources / n_claims, 3) if n_claims else 0.0,
+    )
+
+
+def to_adjacency(graph: ProvenanceGraph) -> Dict[str, List[str]]:
