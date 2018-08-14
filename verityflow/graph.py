@@ -88,3 +88,11 @@ def compute_stats(graph: ProvenanceGraph) -> GraphStats:
 
 
 def to_adjacency(graph: ProvenanceGraph) -> Dict[str, List[str]]:
+    """Return a claim -> [source_id, ...] adjacency map.
+
+    Useful for exporting the provenance skeleton to graph-visualisation tools.
+    """
+    adj: Dict[str, List[str]] = {}
+    for claim_id in graph.claims:
+        adj[claim_id] = [s.id for s in graph.sources_for_claim(claim_id)]
+    return adj
