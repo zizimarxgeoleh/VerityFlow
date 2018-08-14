@@ -57,3 +57,11 @@ def build_graph(notes: Iterable[ResearchNote]) -> ProvenanceGraph:
             graph.quotations[q.id] = q
         for l in note.links:
             if l.id in seen_link_ids:
+                continue
+            seen_link_ids.add(l.id)
+            graph.links.append(l)
+
+    return graph
+
+
+def compute_stats(graph: ProvenanceGraph) -> GraphStats:
