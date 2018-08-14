@@ -73,3 +73,10 @@ def compute_stats(graph: ProvenanceGraph) -> GraphStats:
     total_quotes = sum(len(graph.quotations_for_claim(c)) for c in graph.claims)
     total_sources = sum(len(graph.sources_for_claim(c)) for c in graph.claims)
 
+    return GraphStats(
+        claims=n_claims,
+        sources=len(graph.sources),
+        quotations=len(graph.quotations),
+        links=len(graph.links),
+        relations=dict(relations),
+        source_tiers=dict(tiers),
