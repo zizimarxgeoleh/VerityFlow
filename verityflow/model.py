@@ -69,3 +69,18 @@ class Source:
             m = re.match(r"https?://([^/]+)/?", self.url)
             if m:
                 host = m.group(1).lower()
+                return host[4:] if host.startswith("www.") else host
+        if self.publisher:
+            return slugify(self.publisher)
+        return slugify(self.author or "unknown")
+
+    def to_dict(self) -> Dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass
+class Quotation:
+    """A verbatim span extracted from a :class:`Source`."""
+
+    id: str
+    source_id: str
