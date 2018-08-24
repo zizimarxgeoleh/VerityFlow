@@ -55,3 +55,17 @@ class Source:
     """A citable artefact: paper, article, dataset, interview, etc."""
 
     id: str
+    title: str
+    kind: str = "document"  # document | dataset | interview | webpage | book
+    author: str = ""
+    year: Optional[int] = None
+    publisher: str = ""
+    url: str = ""
+    tier: str = "secondary"  # primary | secondary | tertiary
+
+    def domain(self) -> str:
+        """Coarse provenance domain used for diversity scoring."""
+        if self.url:
+            m = re.match(r"https?://([^/]+)/?", self.url)
+            if m:
+                host = m.group(1).lower()
