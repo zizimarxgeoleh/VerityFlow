@@ -26,3 +26,17 @@ from typing import Any, Dict, Iterable, List, Optional
 
 # Relation vocabulary used by evidence links. The weight expresses how much a
 # given relation contributes to (or detracts from) claim support strength.
+RELATION_WEIGHTS: Dict[str, float] = {
+    "supports": 1.0,
+    "qualifies": 0.5,
+    "context": 0.25,
+    "refutes": -1.0,
+}
+
+VALID_RELATIONS = tuple(RELATION_WEIGHTS.keys())
+
+_SLUG_RE = re.compile(r"[^a-z0-9]+")
+
+
+def slugify(text: str) -> str:
+    """Return a stable, lowercase slug for *text*."""
