@@ -40,3 +40,18 @@ _SLUG_RE = re.compile(r"[^a-z0-9]+")
 
 def slugify(text: str) -> str:
     """Return a stable, lowercase slug for *text*."""
+    s = _SLUG_RE.sub("-", text.strip().lower()).strip("-")
+    return s or "item"
+
+
+def stable_id(prefix: str, *parts: str) -> str:
+    """Deterministic short id derived from *parts* (order-sensitive)."""
+    digest = hashlib.sha1("\u241f".join(parts).encode("utf-8")).hexdigest()
+    return f"{prefix}-{digest[:10]}"
+
+
+@dataclass
+class Source:
+    """A citable artefact: paper, article, dataset, interview, etc."""
+
+    id: str
