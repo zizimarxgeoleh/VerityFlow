@@ -84,3 +84,17 @@ class Quotation:
 
     id: str
     source_id: str
+    text: str
+    locator: str = ""  # page, timestamp, paragraph marker, etc.
+
+    def word_count(self) -> int:
+        return len([w for w in self.text.split() if w])
+
+    def to_dict(self) -> Dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass
+class Claim:
+    """An assertion under scrutiny."""
+
