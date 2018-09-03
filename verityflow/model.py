@@ -98,3 +98,17 @@ class Quotation:
 class Claim:
     """An assertion under scrutiny."""
 
+    id: str
+    text: str
+    topic: str = "general"
+    author: str = ""
+    stance: str = "asserted"  # asserted | disputed | hypothesis
+
+    def to_dict(self) -> Dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass
+class EvidenceLink:
+    """Typed edge from a :class:`Quotation` to a :class:`Claim`."""
+
