@@ -127,3 +127,17 @@ class EvidenceLink:
 
 
 @dataclass
+class ResearchNote:
+    """Ingestion unit binding one claim to its supporting material."""
+
+    claim: Claim
+    sources: List[Source] = field(default_factory=list)
+    quotations: List[Quotation] = field(default_factory=list)
+    links: List[EvidenceLink] = field(default_factory=list)
+
+    @staticmethod
+    def from_dict(raw: Dict[str, Any]) -> "ResearchNote":
+        """Build a note from a loosely-typed dict (as loaded from JSON).
+
+        Missing ids are synthesised deterministically so the same input always
+        yields the same graph.
