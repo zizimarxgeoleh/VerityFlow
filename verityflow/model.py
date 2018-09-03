@@ -112,3 +112,18 @@ class Claim:
 class EvidenceLink:
     """Typed edge from a :class:`Quotation` to a :class:`Claim`."""
 
+    id: str
+    claim_id: str
+    quotation_id: str
+    relation: str = "supports"
+    confidence: float = 1.0  # 0..1 annotator confidence
+
+    def weight(self) -> float:
+        base = RELATION_WEIGHTS.get(self.relation, 0.0)
+        return base * max(0.0, min(1.0, self.confidence))
+
+    def to_dict(self) -> Dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass
