@@ -141,3 +141,18 @@ class ResearchNote:
 
         Missing ids are synthesised deterministically so the same input always
         yields the same graph.
+        """
+        c = raw["claim"]
+        claim_text = c["text"]
+        claim = Claim(
+            id=c.get("id") or stable_id("claim", claim_text),
+            text=claim_text,
+            topic=c.get("topic", "general"),
+            author=c.get("author", ""),
+            stance=c.get("stance", "asserted"),
+        )
+
+        sources: List[Source] = []
+        for s in raw.get("sources", []):
+            title = s["title"]
+            sources.append(
