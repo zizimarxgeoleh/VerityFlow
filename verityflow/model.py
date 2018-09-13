@@ -170,3 +170,18 @@ class ResearchNote:
         src_by_key = {s.title: s.id for s in sources}
 
         quotations: List[Quotation] = []
+        for q in raw.get("quotations", []):
+            sid = q.get("source_id")
+            if not sid and q.get("source_title"):
+                sid = src_by_key.get(q["source_title"], "")
+            qtext = q["text"]
+            quotations.append(
+                Quotation(
+                    id=q.get("id") or stable_id("quo", qtext),
+                    source_id=sid or "",
+                    text=qtext,
+                    locator=q.get("locator", ""),
+                )
+            )
+        quo_by_text = {q.text: q.id for q in quotations}
+
