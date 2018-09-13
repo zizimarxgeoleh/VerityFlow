@@ -156,3 +156,17 @@ class ResearchNote:
         for s in raw.get("sources", []):
             title = s["title"]
             sources.append(
+                Source(
+                    id=s.get("id") or stable_id("src", title, str(s.get("year", ""))),
+                    title=title,
+                    kind=s.get("kind", "document"),
+                    author=s.get("author", ""),
+                    year=s.get("year"),
+                    publisher=s.get("publisher", ""),
+                    url=s.get("url", ""),
+                    tier=s.get("tier", "secondary"),
+                )
+            )
+        src_by_key = {s.title: s.id for s in sources}
+
+        quotations: List[Quotation] = []
