@@ -214,3 +214,17 @@ class ResearchNote:
         )
 
     def to_dict(self) -> Dict[str, Any]:
+        return {
+            "claim": self.claim.to_dict(),
+            "sources": [s.to_dict() for s in self.sources],
+            "quotations": [q.to_dict() for q in self.quotations],
+            "links": [l.to_dict() for l in self.links],
+        }
+
+
+@dataclass
+class ProvenanceGraph:
+    """A compiled directed graph over claims, quotations and sources."""
+
+    claims: Dict[str, Claim] = field(default_factory=dict)
+    sources: Dict[str, Source] = field(default_factory=dict)
