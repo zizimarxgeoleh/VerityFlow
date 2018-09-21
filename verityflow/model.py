@@ -185,3 +185,17 @@ class ResearchNote:
             )
         quo_by_text = {q.text: q.id for q in quotations}
 
+        links: List[EvidenceLink] = []
+        for l in raw.get("links", []):
+            qid = l.get("quotation_id")
+            if not qid and l.get("quotation_text"):
+                qid = quo_by_text.get(l["quotation_text"], "")
+            relation = l.get("relation", "supports")
+            if relation not in VALID_RELATIONS:
+                raise ValueError(
+                    f"invalid relation {relation!r}; expected one of {VALID_RELATIONS}"
+                )
+            links.append(
+                EvidenceLink(
+                    id=l.get("id")
+                    or stable_id("lnk", claim.id, qid or "", relation),
