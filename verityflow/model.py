@@ -199,3 +199,18 @@ class ResearchNote:
                 EvidenceLink(
                     id=l.get("id")
                     or stable_id("lnk", claim.id, qid or "", relation),
+                    claim_id=claim.id,
+                    quotation_id=qid or "",
+                    relation=relation,
+                    confidence=float(l.get("confidence", 1.0)),
+                )
+            )
+
+        return ResearchNote(
+            claim=claim,
+            sources=sources,
+            quotations=quotations,
+            links=links,
+        )
+
+    def to_dict(self) -> Dict[str, Any]:
