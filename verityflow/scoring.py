@@ -31,3 +31,12 @@ class ClaimScore:
     support_index: float
     n_sources: int
     n_domains: int
+    n_supporting: int
+    n_refuting: int
+
+    def to_dict(self) -> Dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass
+class ScoreReport:
