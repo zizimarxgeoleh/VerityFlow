@@ -228,3 +228,17 @@ class ProvenanceGraph:
 
     claims: Dict[str, Claim] = field(default_factory=dict)
     sources: Dict[str, Source] = field(default_factory=dict)
+    quotations: Dict[str, Quotation] = field(default_factory=dict)
+    links: List[EvidenceLink] = field(default_factory=list)
+
+    # ------------------------------------------------------------------ views
+    def links_for_claim(self, claim_id: str) -> List[EvidenceLink]:
+        return [l for l in self.links if l.claim_id == claim_id]
+
+    def quotations_for_claim(self, claim_id: str) -> List[Quotation]:
+        out: List[Quotation] = []
+        seen = set()
+        for l in self.links_for_claim(claim_id):
+            q = self.quotations.get(l.quotation_id)
+            if q and q.id not in seen:
+                seen.add(q.id)
