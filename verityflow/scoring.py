@@ -12,3 +12,12 @@ Three orthogonal metrics are computed per claim and aggregated to the graph:
   weights, squashed into a bounded 0..1 support index.
 """
 
+from __future__ import annotations
+
+import math
+from dataclasses import dataclass, asdict, field
+from typing import Any, Dict, List
+
+from .model import ProvenanceGraph, RELATION_WEIGHTS
+
+
