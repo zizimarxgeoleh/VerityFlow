@@ -21,3 +21,13 @@ from typing import Any, Dict, List
 from .model import ProvenanceGraph, RELATION_WEIGHTS
 
 
+@dataclass
+class ClaimScore:
+    claim_id: str
+    covered: bool
+    contested: bool
+    diversity: float
+    support_raw: float
+    support_index: float
+    n_sources: int
+    n_domains: int
