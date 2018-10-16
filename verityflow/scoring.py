@@ -40,3 +40,12 @@ class ClaimScore:
 
 @dataclass
 class ScoreReport:
+    coverage: float
+    mean_diversity: float
+    mean_support: float
+    claims: List[ClaimScore] = field(default_factory=list)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "coverage": round(self.coverage, 4),
+            "mean_diversity": round(self.mean_diversity, 4),
