@@ -59,3 +59,12 @@ def _domain_distribution(graph: ProvenanceGraph, claim_id: str) -> Dict[str, int
     for src in graph.sources_for_claim(claim_id):
         d = src.domain()
         counts[d] = counts.get(d, 0) + 1
+    return counts
+
+
+def source_diversity(graph: ProvenanceGraph, claim_id: str) -> float:
+    """Normalised Shannon entropy of provenance domains for *claim_id*.
+
+    Returns 0.0 for a claim backed by a single domain (or none) and approaches
+    1.0 as evidence spreads across many equally-weighted domains.
+    """
