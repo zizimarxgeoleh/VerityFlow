@@ -77,3 +77,12 @@ def source_diversity(graph: ProvenanceGraph, claim_id: str) -> float:
         p = count / total
         entropy -= p * math.log(p, 2)
     return round(entropy / math.log(len(dist), 2), 4)
+
+
+def claim_support_strength(graph: ProvenanceGraph, claim_id: str) -> float:
+    """Confidence-weighted, bounded support index in [0, 1].
+
+    The raw score is a signed sum of ``relation_weight * confidence`` across
+    all links for the claim. It is mapped through a logistic squashing function
+    so that a strongly-refuted claim tends to 0 and a strongly-supported claim
+    tends to 1, with a neutral (unlinked) claim landing at 0.5.
