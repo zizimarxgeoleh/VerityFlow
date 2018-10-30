@@ -49,3 +49,13 @@ class ScoreReport:
         return {
             "coverage": round(self.coverage, 4),
             "mean_diversity": round(self.mean_diversity, 4),
+            "mean_support": round(self.mean_support, 4),
+            "claims": [c.to_dict() for c in self.claims],
+        }
+
+
+def _domain_distribution(graph: ProvenanceGraph, claim_id: str) -> Dict[str, int]:
+    counts: Dict[str, int] = {}
+    for src in graph.sources_for_claim(claim_id):
+        d = src.domain()
+        counts[d] = counts.get(d, 0) + 1
