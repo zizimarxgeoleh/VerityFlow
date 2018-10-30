@@ -68,3 +68,12 @@ def source_diversity(graph: ProvenanceGraph, claim_id: str) -> float:
     Returns 0.0 for a claim backed by a single domain (or none) and approaches
     1.0 as evidence spreads across many equally-weighted domains.
     """
+    dist = _domain_distribution(graph, claim_id)
+    total = sum(dist.values())
+    if total == 0 or len(dist) <= 1:
+        return 0.0
+    entropy = 0.0
+    for count in dist.values():
+        p = count / total
+        entropy -= p * math.log(p, 2)
+    return round(entropy / math.log(len(dist), 2), 4)
