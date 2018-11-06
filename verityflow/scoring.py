@@ -96,3 +96,12 @@ def _support_raw(graph: ProvenanceGraph, claim_id: str) -> float:
 
 
 def score_claim(graph: ProvenanceGraph, claim_id: str) -> ClaimScore:
+    links = graph.links_for_claim(claim_id)
+    n_support = sum(1 for l in links if RELATION_WEIGHTS.get(l.relation, 0) > 0)
+    n_refute = sum(1 for l in links if RELATION_WEIGHTS.get(l.relation, 0) < 0)
+    sources = graph.sources_for_claim(claim_id)
+    domains = _domain_distribution(graph, claim_id)
+
+    covered = n_support > 0
+    contested = n_refute > 0
+
