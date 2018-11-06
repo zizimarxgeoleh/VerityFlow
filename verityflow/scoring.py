@@ -105,3 +105,12 @@ def score_claim(graph: ProvenanceGraph, claim_id: str) -> ClaimScore:
     covered = n_support > 0
     contested = n_refute > 0
 
+    return ClaimScore(
+        claim_id=claim_id,
+        covered=covered,
+        contested=contested,
+        diversity=source_diversity(graph, claim_id),
+        support_raw=_support_raw(graph, claim_id),
+        support_index=claim_support_strength(graph, claim_id),
+        n_sources=len(sources),
+        n_domains=len(domains),
