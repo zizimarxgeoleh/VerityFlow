@@ -86,3 +86,13 @@ def claim_support_strength(graph: ProvenanceGraph, claim_id: str) -> float:
     all links for the claim. It is mapped through a logistic squashing function
     so that a strongly-refuted claim tends to 0 and a strongly-supported claim
     tends to 1, with a neutral (unlinked) claim landing at 0.5.
+    """
+    raw = sum(l.weight() for l in graph.links_for_claim(claim_id))
+    return round(1.0 / (1.0 + math.exp(-raw)), 4)
+
+
+def _support_raw(graph: ProvenanceGraph, claim_id: str) -> float:
+    return round(sum(l.weight() for l in graph.links_for_claim(claim_id)), 4)
+
+
+def score_claim(graph: ProvenanceGraph, claim_id: str) -> ClaimScore:
