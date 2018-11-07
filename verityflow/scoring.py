@@ -114,3 +114,12 @@ def score_claim(graph: ProvenanceGraph, claim_id: str) -> ClaimScore:
         support_index=claim_support_strength(graph, claim_id),
         n_sources=len(sources),
         n_domains=len(domains),
+        n_supporting=n_support,
+        n_refuting=n_refute,
+    )
+
+
+def citation_coverage(graph: ProvenanceGraph) -> float:
+    """Fraction of claims with at least one supporting evidence link."""
+    if not graph.claims:
+        return 0.0
