@@ -14,3 +14,8 @@ internal sealed class CliOptions
     public OutputFormat Format { get; private set; } = OutputFormat.Text;
     public bool ShowHelp { get; private set; }
 
+    public static CliOptions Parse(string[] args)
+    {
+        var opts = new CliOptions();
+        for (int i = 0; i < args.Length; i++)
+        {
