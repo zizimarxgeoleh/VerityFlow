@@ -29,3 +29,8 @@ internal sealed class CliOptions
                 case "--input":
                     opts.InputPath = NextValue(args, ref i);
                     break;
+                case "-o":
+                case "--output":
+                    opts.OutputPath = NextValue(args, ref i);
+                    break;
+                case "-f":
