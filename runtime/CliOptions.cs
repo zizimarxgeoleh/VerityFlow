@@ -24,3 +24,8 @@ internal sealed class CliOptions
                 case "-h":
                 case "--help":
                     opts.ShowHelp = true;
+                    break;
+                case "-i":
+                case "--input":
+                    opts.InputPath = NextValue(args, ref i);
+                    break;
