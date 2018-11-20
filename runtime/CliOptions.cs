@@ -34,3 +34,8 @@ internal sealed class CliOptions
                     opts.OutputPath = NextValue(args, ref i);
                     break;
                 case "-f":
+                case "--format":
+                    string value = NextValue(args, ref i) ?? "text";
+                    opts.Format = value.Equals("json", StringComparison.OrdinalIgnoreCase)
+                        ? OutputFormat.Json
+                        : OutputFormat.Text;
