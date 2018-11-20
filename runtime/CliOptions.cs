@@ -19,3 +19,8 @@ internal sealed class CliOptions
         var opts = new CliOptions();
         for (int i = 0; i < args.Length; i++)
         {
+            switch (args[i])
+            {
+                case "-h":
+                case "--help":
+                    opts.ShowHelp = true;
