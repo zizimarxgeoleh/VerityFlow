@@ -44,3 +44,8 @@ internal sealed class CliOptions
                     // Unknown positional token becomes the input path if unset.
                     opts.InputPath ??= args[i];
                     break;
+            }
+        }
+
+        return opts;
+    }
