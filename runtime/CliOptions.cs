@@ -39,3 +39,8 @@ internal sealed class CliOptions
                     opts.Format = value.Equals("json", StringComparison.OrdinalIgnoreCase)
                         ? OutputFormat.Json
                         : OutputFormat.Text;
+                    break;
+                default:
+                    // Unknown positional token becomes the input path if unset.
+                    opts.InputPath ??= args[i];
+                    break;
