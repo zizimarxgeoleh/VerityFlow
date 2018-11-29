@@ -7,3 +7,10 @@ internal sealed record ClaimEntry(
     string ClaimText,
     string Topic,
     string Verdict,
+    double SupportIndex,
+    double Diversity,
+    int QuotationCount);
+
+internal sealed record Dossier(
+    string Title,
+    double Coverage,
