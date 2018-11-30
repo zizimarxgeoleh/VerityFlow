@@ -21,3 +21,10 @@ internal sealed record Dossier(
     int Quotations,
     int Links,
     IReadOnlyList<ClaimEntry> Entries);
+
+/// <summary>Parses the Python-emitted dossier JSON using only System.Text.Json.</summary>
+internal static class DossierReader
+{
+    public static Dossier Parse(string json)
+    {
+        using var doc = JsonDocument.Parse(json);
