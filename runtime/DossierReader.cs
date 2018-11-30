@@ -14,3 +14,10 @@ internal sealed record ClaimEntry(
 internal sealed record Dossier(
     string Title,
     double Coverage,
+    double MeanSupport,
+    double MeanDiversity,
+    int Claims,
+    int Sources,
+    int Quotations,
+    int Links,
+    IReadOnlyList<ClaimEntry> Entries);
