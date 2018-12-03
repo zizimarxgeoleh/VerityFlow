@@ -28,3 +28,10 @@ internal static class DossierReader
     public static Dossier Parse(string json)
     {
         using var doc = JsonDocument.Parse(json);
+        JsonElement root = doc.RootElement;
+
+        string title = GetString(root, "title", "Evidence Dossier");
+
+        double coverage = 0, meanSupport = 0, meanDiversity = 0;
+        if (root.TryGetProperty("summary", out var summary))
+        {
