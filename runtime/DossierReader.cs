@@ -48,3 +48,10 @@ internal static class DossierReader
             quotations = GetInt(stats, "quotations");
             links = GetInt(stats, "links");
         }
+
+        var entries = new List<ClaimEntry>();
+        if (root.TryGetProperty("entries", out var arr) && arr.ValueKind == JsonValueKind.Array)
+        {
+            foreach (JsonElement e in arr.EnumerateArray())
+            {
+                int quoteCount = 0;
