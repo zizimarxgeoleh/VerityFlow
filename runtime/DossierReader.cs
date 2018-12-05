@@ -41,3 +41,10 @@ internal static class DossierReader
         }
 
         int claims = 0, sources = 0, quotations = 0, links = 0;
+        if (root.TryGetProperty("graph_stats", out var stats))
+        {
+            claims = GetInt(stats, "claims");
+            sources = GetInt(stats, "sources");
+            quotations = GetInt(stats, "quotations");
+            links = GetInt(stats, "links");
+        }
