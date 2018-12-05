@@ -35,3 +35,9 @@ internal static class DossierReader
         double coverage = 0, meanSupport = 0, meanDiversity = 0;
         if (root.TryGetProperty("summary", out var summary))
         {
+            coverage = GetDouble(summary, "coverage");
+            meanSupport = GetDouble(summary, "mean_support");
+            meanDiversity = GetDouble(summary, "mean_diversity");
+        }
+
+        int claims = 0, sources = 0, quotations = 0, links = 0;
