@@ -62,3 +62,10 @@ internal static class DossierReader
                 }
 
                 entries.Add(new ClaimEntry(
+                    GetString(e, "claim_id", ""),
+                    GetString(e, "claim_text", ""),
+                    GetString(e, "topic", "general"),
+                    GetString(e, "verdict", "unsupported"),
+                    GetDouble(e, "support_index"),
+                    GetDouble(e, "diversity"),
+                    quoteCount));
