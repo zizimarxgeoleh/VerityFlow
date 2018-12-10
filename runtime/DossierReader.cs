@@ -55,3 +55,10 @@ internal static class DossierReader
             foreach (JsonElement e in arr.EnumerateArray())
             {
                 int quoteCount = 0;
+                if (e.TryGetProperty("quotations", out var quotes) &&
+                    quotes.ValueKind == JsonValueKind.Array)
+                {
+                    quoteCount = quotes.GetArrayLength();
+                }
+
+                entries.Add(new ClaimEntry(
