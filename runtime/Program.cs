@@ -12,3 +12,9 @@ namespace VerityFlow.Runtime;
 internal static class Program
 {
     private static int Main(string[] args)
+    {
+        var options = CliOptions.Parse(args);
+        if (options.ShowHelp)
+        {
+            PrintUsage();
+            return 0;
