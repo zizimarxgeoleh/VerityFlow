@@ -5,3 +5,10 @@ namespace VerityFlow.Runtime;
 
 /// <summary>
 /// VerityFlow.Runtime is a dependency-free companion to the Python core. It
+/// ingests the JSON dossier emitted by <c>verityflow dossier --format json</c>
+/// and produces a compact executive summary: verdict tallies, the weakest
+/// claims that need more citations, and an overall provenance health grade.
+/// </summary>
+internal static class Program
+{
+    private static int Main(string[] args)
