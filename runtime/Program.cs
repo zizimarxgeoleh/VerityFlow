@@ -18,3 +18,9 @@ internal static class Program
         {
             PrintUsage();
             return 0;
+        }
+
+        string json;
+        try
+        {
+            json = options.InputPath is null or "-"
