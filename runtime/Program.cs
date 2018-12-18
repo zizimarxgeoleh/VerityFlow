@@ -24,3 +24,9 @@ internal static class Program
         try
         {
             json = options.InputPath is null or "-"
+                ? Console.In.ReadToEnd()
+                : File.ReadAllText(options.InputPath);
+        }
+        catch (IOException ex)
+        {
+            Console.Error.WriteLine($"error: cannot read input: {ex.Message}");
