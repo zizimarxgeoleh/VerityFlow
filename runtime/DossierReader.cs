@@ -69,3 +69,10 @@ internal static class DossierReader
                     GetDouble(e, "support_index"),
                     GetDouble(e, "diversity"),
                     quoteCount));
+            }
+        }
+
+        return new Dossier(title, coverage, meanSupport, meanDiversity,
+            claims, sources, quotations, links, entries);
+    }
+
