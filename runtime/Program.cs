@@ -30,3 +30,10 @@ internal static class Program
         catch (IOException ex)
         {
             Console.Error.WriteLine($"error: cannot read input: {ex.Message}");
+            return 1;
+        }
+
+        Dossier dossier;
+        try
+        {
+            dossier = DossierReader.Parse(json);
