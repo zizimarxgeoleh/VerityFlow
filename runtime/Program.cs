@@ -37,3 +37,9 @@ internal static class Program
         try
         {
             dossier = DossierReader.Parse(json);
+        }
+        catch (JsonException ex)
+        {
+            Console.Error.WriteLine($"error: malformed dossier JSON: {ex.Message}");
+            return 1;
+        }
