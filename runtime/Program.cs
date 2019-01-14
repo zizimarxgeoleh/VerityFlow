@@ -43,3 +43,9 @@ internal static class Program
             Console.Error.WriteLine($"error: malformed dossier JSON: {ex.Message}");
             return 1;
         }
+
+        var summary = Summariser.Summarise(dossier);
+        string rendered = options.Format == OutputFormat.Json
+            ? Summariser.RenderJson(summary)
+            : Summariser.RenderText(summary);
+
