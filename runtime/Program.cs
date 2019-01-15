@@ -56,3 +56,9 @@ internal static class Program
         else
         {
             File.WriteAllText(options.OutputPath, rendered);
+        }
+
+        // Non-zero exit if provenance health falls below the fail threshold.
+        return summary.Grade == "F" ? 2 : 0;
+    }
+
