@@ -49,3 +49,10 @@ internal static class Program
             ? Summariser.RenderJson(summary)
             : Summariser.RenderText(summary);
 
+        if (options.OutputPath is null or "-")
+        {
+            Console.Out.WriteLine(rendered);
+        }
+        else
+        {
+            File.WriteAllText(options.OutputPath, rendered);
