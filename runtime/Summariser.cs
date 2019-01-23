@@ -20,3 +20,12 @@ internal sealed record Summary(
 ///
 /// The provenance <b>health score</b> blends three normalised signals:
 /// coverage (40%), mean support (35%) and mean diversity (25%). It is graded
+/// on a fixed scale so a reviewer can triage a report at a glance.
+/// </summary>
+internal static class Summariser
+{
+    private const int WeakestLimit = 5;
+
+    public static Summary Summarise(Dossier dossier)
+    {
+        var tally = new SortedDictionary<string, int>(StringComparer.Ordinal);
