@@ -11,3 +11,12 @@ internal sealed record Summary(
     double Coverage,
     double MeanSupport,
     double MeanDiversity,
+    int TotalClaims,
+    IReadOnlyDictionary<string, int> VerdictTally,
+    IReadOnlyList<ClaimEntry> WeakestClaims);
+
+/// <summary>
+/// Turns a parsed <see cref="Dossier"/> into an executive <see cref="Summary"/>.
+///
+/// The provenance <b>health score</b> blends three normalised signals:
+/// coverage (40%), mean support (35%) and mean diversity (25%). It is graded
