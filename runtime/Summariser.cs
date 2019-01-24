@@ -29,3 +29,13 @@ internal static class Summariser
     public static Summary Summarise(Dossier dossier)
     {
         var tally = new SortedDictionary<string, int>(StringComparer.Ordinal);
+        foreach (ClaimEntry e in dossier.Entries)
+        {
+            tally[e.Verdict] = tally.TryGetValue(e.Verdict, out int n) ? n + 1 : 1;
+        }
+
+        double health =
+            (dossier.Coverage * 0.40) +
+            (dossier.MeanSupport * 0.35) +
+            (dossier.MeanDiversity * 0.25);
+        health = Math.Round(Math.Clamp(health, 0.0, 1.0), 4);
