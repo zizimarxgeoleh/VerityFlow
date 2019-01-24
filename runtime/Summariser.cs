@@ -39,3 +39,12 @@ internal static class Summariser
             (dossier.MeanSupport * 0.35) +
             (dossier.MeanDiversity * 0.25);
         health = Math.Round(Math.Clamp(health, 0.0, 1.0), 4);
+
+        var weakest = dossier.Entries
+            .OrderBy(e => e.SupportIndex)
+            .ThenBy(e => e.Diversity)
+            .Take(WeakestLimit)
+            .ToList();
+
+        return new Summary(
+            dossier.Title,
