@@ -57,3 +57,12 @@ internal static class Summariser
             tally,
             weakest);
     }
+
+    private static string Grade(double health) => health switch
+    {
+        >= 0.85 => "A",
+        >= 0.70 => "B",
+        >= 0.55 => "C",
+        >= 0.40 => "D",
+        _ => "F",
+    };
