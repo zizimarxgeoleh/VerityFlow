@@ -76,3 +76,12 @@ internal static class Summariser
         sb.AppendLine($"Citation coverage : {s.Coverage:P0}");
         sb.AppendLine($"Mean support      : {s.MeanSupport:F2}");
         sb.AppendLine($"Mean diversity    : {s.MeanDiversity:F2}");
+        sb.AppendLine($"Claims analysed   : {s.TotalClaims}");
+        sb.AppendLine();
+        sb.AppendLine("Verdict tally:");
+        foreach (var kv in s.VerdictTally)
+        {
+            sb.AppendLine($"  {kv.Key,-16} {kv.Value}");
+        }
+
+        if (s.WeakestClaims.Count > 0)
