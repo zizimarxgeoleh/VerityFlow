@@ -85,3 +85,12 @@ internal static class Summariser
         }
 
         if (s.WeakestClaims.Count > 0)
+        {
+            sb.AppendLine();
+            sb.AppendLine("Weakest claims (need more citations):");
+            foreach (ClaimEntry e in s.WeakestClaims)
+            {
+                string text = e.ClaimText.Length > 64
+                    ? e.ClaimText[..61] + "..."
+                    : e.ClaimText;
+                sb.AppendLine(
