@@ -48,3 +48,12 @@ internal static class Summariser
 
         return new Summary(
             dossier.Title,
+            Grade(health),
+            health,
+            dossier.Coverage,
+            dossier.MeanSupport,
+            dossier.MeanDiversity,
+            dossier.Claims == 0 ? dossier.Entries.Count : dossier.Claims,
+            tally,
+            weakest);
+    }
