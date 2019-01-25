@@ -94,3 +94,12 @@ internal static class Summariser
                     ? e.ClaimText[..61] + "..."
                     : e.ClaimText;
                 sb.AppendLine(
+                    $"  [{e.SupportIndex:F2}] {text}  ({e.QuotationCount} quotes)");
+            }
+        }
+
+        return sb.ToString().TrimEnd();
+    }
+
+    public static string RenderJson(Summary s)
+    {
