@@ -103,3 +103,12 @@ internal static class Summariser
 
     public static string RenderJson(Summary s)
     {
+        var payload = new Dictionary<string, object?>
+        {
+            ["title"] = s.Title,
+            ["grade"] = s.Grade,
+            ["health_score"] = s.HealthScore,
+            ["coverage"] = s.Coverage,
+            ["mean_support"] = s.MeanSupport,
+            ["mean_diversity"] = s.MeanDiversity,
+            ["total_claims"] = s.TotalClaims,
