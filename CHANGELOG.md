@@ -105,3 +105,22 @@ Entries describe user-visible behavior at each release.
 ## [0.3.0] - 2019-06-18
 
 ### Added
+
+- Graph compilation with de-duplication by deterministic id, structural
+  statistics, and adjacency and edge-list exports for external tools.
+
+## [0.2.0] - 2018-05-22
+
+### Added
+
+- `graph` subcommand with `stats`, `adjacency` and `edges` output modes.
+
+## [0.1.0] - 2017-06-14
+
+### Added
+
+- First public release: the data model for claims, sources, quotations and
+  evidence links; deterministic content-hash ids; JSON research-note ingestion
+  keyed by `source_title` and `quotation_text`.
+
+<!-- draft note 1 -->
