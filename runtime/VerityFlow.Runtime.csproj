@@ -9,3 +9,4 @@
     <RootNamespace>VerityFlow.Runtime</RootNamespace>
     <InvariantGlobalization>true</InvariantGlobalization>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <Description>Dossier summariser for VerityFlow — Claim Provenance Graph Builder.</Description>
