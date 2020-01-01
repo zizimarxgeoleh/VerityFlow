@@ -16,3 +16,18 @@
         "url": "https://reports.remotelabs.example/async-2024",
         "tier": "primary"
       },
+      {
+        "title": "Meeting Load and Throughput in 40 Engineering Orgs",
+        "kind": "document",
+        "author": "K. Osei",
+        "year": 2023,
+        "publisher": "Journal of Software Practice",
+        "url": "https://jsp.example/articles/meeting-load",
+        "tier": "primary"
+      },
+      {
+        "title": "Field notes: switching to written standups",
+        "kind": "interview",
+        "author": "M. Alvarez",
+        "year": 2024,
+        "tier": "secondary"
