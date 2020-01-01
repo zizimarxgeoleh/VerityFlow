@@ -1,0 +1,18 @@
+[
+  {
+    "claim": {
+      "text": "Distributed teams that adopt asynchronous standups report fewer meeting hours without measurable delivery loss.",
+      "topic": "engineering-management",
+      "author": "internal-research",
+      "stance": "asserted"
+    },
+    "sources": [
+      {
+        "title": "State of Async Work 2024",
+        "kind": "dataset",
+        "author": "Remote Labs",
+        "year": 2024,
+        "publisher": "Remote Labs",
+        "url": "https://reports.remotelabs.example/async-2024",
+        "tier": "primary"
+      },
