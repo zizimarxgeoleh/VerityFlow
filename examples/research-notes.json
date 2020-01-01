@@ -31,3 +31,19 @@
         "author": "M. Alvarez",
         "year": 2024,
         "tier": "secondary"
+      }
+    ],
+    "quotations": [
+      {
+        "source_title": "State of Async Work 2024",
+        "text": "Teams running written standups logged 31% fewer synchronous meeting hours per sprint.",
+        "locator": "table 4"
+      },
+      {
+        "source_title": "Meeting Load and Throughput in 40 Engineering Orgs",
+        "text": "Cycle time was statistically unchanged after the transition to asynchronous coordination.",
+        "locator": "p. 12"
+      },
+      {
+        "source_title": "Field notes: switching to written standups",
+        "text": "Nobody could point to a single missed deadline caused by dropping the daily call.",
