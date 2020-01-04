@@ -92,3 +92,19 @@
         "publisher": "DeployMetrics",
         "url": "https://deploymetrics.example/critique-flags",
         "tier": "secondary"
+      }
+    ],
+    "quotations": [
+      {
+        "source_title": "Progressive Delivery Benchmarks",
+        "text": "Pipelines with feature flags rolled back 42% less often over a six-month window.",
+        "locator": "fig 2"
+      },
+      {
+        "source_title": "A Critique of Flag-Driven Development",
+        "text": "Unretired flags accumulated into a maintenance burden that reintroduced incidents.",
+        "locator": "sec 3"
+      }
+    ],
+    "links": [
+      {
