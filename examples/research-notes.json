@@ -108,3 +108,18 @@
     ],
     "links": [
       {
+        "quotation_text": "Pipelines with feature flags rolled back 42% less often over a six-month window.",
+        "relation": "supports",
+        "confidence": 0.85
+      },
+      {
+        "quotation_text": "Unretired flags accumulated into a maintenance burden that reintroduced incidents.",
+        "relation": "refutes",
+        "confidence": 0.5
+      }
+    ]
+  },
+  {
+    "claim": {
+      "text": "Mandatory pair programming improves onboarding speed for junior engineers.",
+      "topic": "engineering-management",
