@@ -62,3 +62,18 @@
         "confidence": 0.9
       },
       {
+        "quotation_text": "Nobody could point to a single missed deadline caused by dropping the daily call.",
+        "relation": "qualifies",
+        "confidence": 0.6
+      }
+    ]
+  },
+  {
+    "claim": {
+      "text": "Feature flags reduce rollback frequency in continuous-deployment pipelines.",
+      "topic": "release-engineering",
+      "stance": "asserted"
+    },
+    "sources": [
+      {
+        "title": "Progressive Delivery Benchmarks",
