@@ -77,3 +77,18 @@
     "sources": [
       {
         "title": "Progressive Delivery Benchmarks",
+        "kind": "dataset",
+        "author": "DeployMetrics",
+        "year": 2023,
+        "publisher": "DeployMetrics",
+        "url": "https://deploymetrics.example/benchmarks",
+        "tier": "primary"
+      },
+      {
+        "title": "A Critique of Flag-Driven Development",
+        "kind": "document",
+        "author": "R. Iqbal",
+        "year": 2024,
+        "publisher": "DeployMetrics",
+        "url": "https://deploymetrics.example/critique-flags",
+        "tier": "secondary"
