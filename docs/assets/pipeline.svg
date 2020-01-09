@@ -11,3 +11,9 @@
     </marker>
     <style>
       .stage { fill:#faf3e0; stroke:#7a6444; stroke-width:1.6; }
+      .stitle { fill:#2b2118; font-family: Georgia, serif; font-size:13px; font-weight:bold; }
+      .ssub { fill:#5a4a34; font-family: Georgia, serif; font-size:10px; }
+      .flow { stroke:#8a1f2c; stroke-width:2; fill:none; }
+      .head { fill:#2b2118; font-family: Georgia, serif; }
+    </style>
+  </defs>
