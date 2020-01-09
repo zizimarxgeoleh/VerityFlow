@@ -17,3 +17,9 @@
       .head { fill:#2b2118; font-family: Georgia, serif; }
     </style>
   </defs>
+
+  <rect width="720" height="300" fill="url(#parch2)"/>
+  <text x="24" y="40" class="head" font-size="20" font-weight="bold">Ingest → Graph → Score → Dossier</text>
+  <line x1="24" y1="52" x2="360" y2="52" stroke="#8a1f2c" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- stages -->
