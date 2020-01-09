@@ -123,3 +123,18 @@
     "claim": {
       "text": "Mandatory pair programming improves onboarding speed for junior engineers.",
       "topic": "engineering-management",
+      "stance": "disputed"
+    },
+    "sources": [
+      {
+        "title": "Onboarding Cohort Study",
+        "kind": "document",
+        "author": "T. Nakamura",
+        "year": 2022,
+        "publisher": "Journal of Software Practice",
+        "url": "https://jsp.example/articles/onboarding-cohort",
+        "tier": "primary"
+      }
+    ],
+    "quotations": [
+      {
