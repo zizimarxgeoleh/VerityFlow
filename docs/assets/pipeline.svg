@@ -4,3 +4,10 @@
   <defs>
     <linearGradient id="parch2" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#f5ecd6"/>
+      <stop offset="1" stop-color="#e4d1a6"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8a1f2c"/>
+    </marker>
+    <style>
+      .stage { fill:#faf3e0; stroke:#7a6444; stroke-width:1.6; }
