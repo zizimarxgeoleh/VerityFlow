@@ -138,3 +138,18 @@
     ],
     "quotations": [
       {
+        "source_title": "Onboarding Cohort Study",
+        "text": "Paired juniors reached their first independent merge two weeks sooner on average.",
+        "locator": "p. 8"
+      }
+    ],
+    "links": [
+      {
+        "quotation_text": "Paired juniors reached their first independent merge two weeks sooner on average.",
+        "relation": "supports",
+        "confidence": 0.7
+      }
+    ]
+  },
+  {
+    "claim": {
