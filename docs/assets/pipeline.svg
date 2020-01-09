@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" width="720" height="300" role="img" aria-label="VerityFlow pipeline animation">
+  <title>VerityFlow: Ingest to Dossier Pipeline</title>
+  <desc>Animated pipeline: research notes are compiled into a graph, scored, and rendered into a dossier that the C# runtime grades. A crimson token flows left to right.</desc>
+  <defs>
+    <linearGradient id="parch2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f5ecd6"/>
