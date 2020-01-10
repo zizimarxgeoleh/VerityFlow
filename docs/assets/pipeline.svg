@@ -36,3 +36,9 @@
     <text x="435" y="140" class="stitle" text-anchor="middle">score</text>
     <text x="435" y="160" class="ssub" text-anchor="middle">coverage · support</text>
 
+    <rect class="stage" x="540" y="110" width="150" height="70" rx="8"/>
+    <text x="615" y="140" class="stitle" text-anchor="middle">dossier</text>
+    <text x="615" y="160" class="ssub" text-anchor="middle">md / json → grade</text>
+  </g>
+
+  <!-- connectors -->
