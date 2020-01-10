@@ -30,3 +30,9 @@
 
     <rect class="stage" x="200" y="110" width="130" height="70" rx="8"/>
     <text x="265" y="140" class="stitle" text-anchor="middle">graph</text>
+    <text x="265" y="160" class="ssub" text-anchor="middle">claims · quotes · links</text>
+
+    <rect class="stage" x="370" y="110" width="130" height="70" rx="8"/>
+    <text x="435" y="140" class="stitle" text-anchor="middle">score</text>
+    <text x="435" y="160" class="ssub" text-anchor="middle">coverage · support</text>
+
