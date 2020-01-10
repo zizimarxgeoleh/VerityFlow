@@ -42,3 +42,9 @@
   </g>
 
   <!-- connectors -->
+  <path class="flow" d="M160,145 L198,145" marker-end="url(#arrow)"/>
+  <path class="flow" d="M330,145 L368,145" marker-end="url(#arrow)"/>
+  <path class="flow" d="M500,145 L538,145" marker-end="url(#arrow)"/>
+
+  <!-- flowing token -->
+  <circle r="6" fill="#9c1f2e">
