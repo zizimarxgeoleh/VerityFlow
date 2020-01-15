@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" width="720" height="360" role="img" aria-label="VerityFlow provenance graph animation">
+  <title>VerityFlow: Provenance Graph</title>
+  <desc>Animated diagram: sources flow into quotations, quotations link to a central claim, and a crimson support pulse traces the strongest evidence chain.</desc>
+  <defs>
+    <linearGradient id="parchment" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4ead2"/>
+      <stop offset="1" stop-color="#e7d6ad"/>
+    </linearGradient>
