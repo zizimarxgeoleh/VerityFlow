@@ -14,3 +14,10 @@
       <feGaussianBlur in="SourceAlpha" stdDeviation="1.4" result="b"/>
       <feOffset in="b" dx="0" dy="1.5" result="o"/>
       <feMerge><feMergeNode in="o"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .ink { fill:#2b2118; font-family: Georgia, 'Times New Roman', serif; }
+      .label { fill:#3a2c1e; font-family: Georgia, serif; font-size:12px; }
+      .edge { stroke:#5a4a34; stroke-width:1.6; fill:none; opacity:0.55; }
+      .node-src { fill:#efe2c2; stroke:#7a6444; stroke-width:1.4; }
+      .node-quo { fill:#f7efdb; stroke:#8a1f2c; stroke-width:1.4; }
