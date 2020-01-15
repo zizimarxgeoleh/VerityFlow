@@ -21,3 +21,11 @@
       .edge { stroke:#5a4a34; stroke-width:1.6; fill:none; opacity:0.55; }
       .node-src { fill:#efe2c2; stroke:#7a6444; stroke-width:1.4; }
       .node-quo { fill:#f7efdb; stroke:#8a1f2c; stroke-width:1.4; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="720" height="360" fill="url(#parchment)"/>
+  <rect x="8" y="8" width="704" height="344" fill="none" stroke="#8a1f2c" stroke-width="2" stroke-dasharray="4 6" opacity="0.4"/>
+  <text x="24" y="36" class="ink" font-size="20" font-weight="bold">VerityFlow · Claim Provenance</text>
+
+  <!-- edges from sources -> quotations -> claim -->
