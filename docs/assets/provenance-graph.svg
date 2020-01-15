@@ -29,3 +29,11 @@
   <text x="24" y="36" class="ink" font-size="20" font-weight="bold">VerityFlow · Claim Provenance</text>
 
   <!-- edges from sources -> quotations -> claim -->
+  <g class="edge">
+    <path d="M150,110 C260,110 300,150 360,180"/>
+    <path d="M150,180 C250,180 300,180 360,180"/>
+    <path d="M150,250 C260,250 300,210 360,180"/>
+    <path d="M150,110 C240,130 240,150 150,180" opacity="0"/>
+  </g>
+
+  <!-- animated support pulse along strongest chain -->
