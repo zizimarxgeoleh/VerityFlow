@@ -37,3 +37,11 @@
   </g>
 
   <!-- animated support pulse along strongest chain -->
+  <circle r="5" fill="#9c1f2e">
+    <animateMotion dur="3.2s" repeatCount="indefinite" path="M150,110 C260,110 300,150 360,180"/>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.85;1" dur="3.2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- source nodes -->
+  <g>
+    <rect class="node-src" x="70" y="94" width="80" height="32" rx="6">
