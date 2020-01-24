@@ -45,3 +45,10 @@
   <!-- source nodes -->
   <g>
     <rect class="node-src" x="70" y="94" width="80" height="32" rx="6">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <text x="110" y="114" class="label" text-anchor="middle">Source A</text>
+
+    <rect class="node-src" x="70" y="164" width="80" height="32" rx="6">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="4s" begin="1s" repeatCount="indefinite"/>
+    </rect>
