@@ -60,3 +60,11 @@
     <text x="110" y="254" class="label" text-anchor="middle">Source C</text>
   </g>
 
+  <!-- claim node -->
+  <g filter="url(#ink)">
+    <circle cx="360" cy="180" r="46" fill="url(#claimGlow)">
+      <animate attributeName="r" values="44;49;44" dur="2.6s" repeatCount="indefinite"/>
+    </circle>
+    <text x="360" y="176" text-anchor="middle" fill="#f4ead2" font-family="Georgia, serif" font-size="13" font-weight="bold">CLAIM</text>
+    <text x="360" y="192" text-anchor="middle" fill="#f0d9c0" font-family="Georgia, serif" font-size="10">support 0.90</text>
+  </g>
