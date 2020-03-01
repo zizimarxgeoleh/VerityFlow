@@ -76,3 +76,16 @@ internal static class DossierReader
             claims, sources, quotations, links, entries);
     }
 
+    private static string GetString(JsonElement el, string name, string fallback) =>
+        el.TryGetProperty(name, out var v) && v.ValueKind == JsonValueKind.String
+            ? v.GetString() ?? fallback
+            : fallback;
+
+    private static double GetDouble(JsonElement el, string name) =>
+        el.TryGetProperty(name, out var v) && v.ValueKind == JsonValueKind.Number
+            ? v.GetDouble()
+            : 0.0;
+
+    private static int GetInt(JsonElement el, string name) =>
+        el.TryGetProperty(name, out var v) && v.ValueKind == JsonValueKind.Number
+            ? v.GetInt32()
