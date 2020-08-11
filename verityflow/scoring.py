@@ -123,3 +123,24 @@ def citation_coverage(graph: ProvenanceGraph) -> float:
     """Fraction of claims with at least one supporting evidence link."""
     if not graph.claims:
         return 0.0
+    covered = sum(
+        1
+        for cid in graph.claims
+        if any(
+            RELATION_WEIGHTS.get(l.relation, 0) > 0 for l in graph.links_for_claim(cid)
+        )
+    )
+    return round(covered / len(graph.claims), 4)
+
+
+def score_graph(graph: ProvenanceGraph) -> ScoreReport:
+    """Produce a full :class:`ScoreReport` for every claim in *graph*."""
+    claim_scores = [score_claim(graph, cid) for cid in graph.claims]
+    n = len(claim_scores) or 1
+    mean_div = sum(c.diversity for c in claim_scores) / n
+    mean_sup = sum(c.support_index for c in claim_scores) / n
+    return ScoreReport(
+        coverage=citation_coverage(graph),
+        mean_diversity=mean_div,
+        mean_support=mean_sup,
+        claims=claim_scores,
