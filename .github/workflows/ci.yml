@@ -5,3 +5,5 @@ on:
   pull_request:
 
 jobs:
+  compile:
+    runs-on: ubuntu-latest
