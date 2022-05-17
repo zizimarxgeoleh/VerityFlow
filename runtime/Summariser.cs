@@ -112,3 +112,23 @@ internal static class Summariser
             ["mean_support"] = s.MeanSupport,
             ["mean_diversity"] = s.MeanDiversity,
             ["total_claims"] = s.TotalClaims,
+            ["verdict_tally"] = s.VerdictTally,
+            ["weakest_claims"] = s.WeakestClaims.Select(e => new Dictionary<string, object?>
+            {
+                ["claim_id"] = e.ClaimId,
+                ["claim_text"] = e.ClaimText,
+                ["support_index"] = e.SupportIndex,
+                ["diversity"] = e.Diversity,
+                ["quotation_count"] = e.QuotationCount,
+            }).ToList(),
+        };
+
+        return JsonSerializer.Serialize(payload, new JsonSerializerOptions
+        {
+            WriteIndented = true,
+        });
+    }
+
+    // Retained for callers that need culture-invariant numeric formatting.
+    internal static string Format(double value) =>
+        value.ToString("F4", CultureInfo.InvariantCulture);
