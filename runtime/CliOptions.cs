@@ -49,3 +49,12 @@ internal sealed class CliOptions
 
         return opts;
     }
+
+    private static string? NextValue(string[] args, ref int index)
+    {
+        if (index + 1 < args.Length)
+        {
+            return args[++index];
+        }
+
+        return null;
