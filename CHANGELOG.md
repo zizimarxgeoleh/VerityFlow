@@ -123,4 +123,4 @@ Entries describe user-visible behavior at each release.
   evidence links; deterministic content-hash ids; JSON research-note ingestion
   keyed by `source_title` and `quotation_text`.
 
-<!-- draft note 808 -->
+<!-- draft note 809 -->
