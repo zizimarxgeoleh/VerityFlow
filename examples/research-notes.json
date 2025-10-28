@@ -153,3 +153,34 @@
   },
   {
     "claim": {
+      "text": "Serverless functions eliminate the need for capacity planning entirely.",
+      "topic": "cloud-architecture",
+      "stance": "hypothesis"
+    },
+    "sources": [
+      {
+        "title": "Cold Starts and Concurrency Limits",
+        "kind": "document",
+        "author": "L. Fenwick",
+        "year": 2023,
+        "publisher": "Cloud Systems Review",
+        "url": "https://csr.example/cold-starts",
+        "tier": "primary"
+      }
+    ],
+    "quotations": [
+      {
+        "source_title": "Cold Starts and Concurrency Limits",
+        "text": "Accounts hitting concurrency ceilings still require deliberate quota planning.",
+        "locator": "p. 5"
+      }
+    ],
+    "links": [
+      {
+        "quotation_text": "Accounts hitting concurrency ceilings still require deliberate quota planning.",
+        "relation": "refutes",
+        "confidence": 0.9
+      }
+    ]
+  }
+]
