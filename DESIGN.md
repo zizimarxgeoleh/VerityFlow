@@ -9,3 +9,6 @@ VerityFlow makes turns claims, quotations, sources and evidence links into navig
 3. **Compositional analysis** — parsers, domain models, metrics and renderers can evolve independently.
 4. **Useful defaults** — bundled fixtures demonstrate realistic workflows without configuration overhead.
 
+## Extension seams
+New record adapters belong at the ingestion boundary, new metrics attach to the analysis summary, and new renderers consume the existing report model. This keeps integrations focused and avoids cross-cutting rewrites.
+
