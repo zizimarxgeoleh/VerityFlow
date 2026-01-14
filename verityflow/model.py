@@ -242,3 +242,43 @@ class ProvenanceGraph:
             q = self.quotations.get(l.quotation_id)
             if q and q.id not in seen:
                 seen.add(q.id)
+                out.append(q)
+        return out
+
+    def sources_for_claim(self, claim_id: str) -> List[Source]:
+        out: List[Source] = []
+        seen = set()
+        for q in self.quotations_for_claim(claim_id):
+            s = self.sources.get(q.source_id)
+            if s and s.id not in seen:
+                seen.add(s.id)
+                out.append(s)
+        return out
+
+    def dangling_links(self) -> List[EvidenceLink]:
+        """Links whose quotation or claim is missing from the graph."""
+        bad = []
+        for l in self.links:
+            if l.claim_id not in self.claims or l.quotation_id not in self.quotations:
+                bad.append(l)
+        return bad
+
+    def orphan_quotations(self) -> List[Quotation]:
+        """Quotations that no link references."""
+        used = {l.quotation_id for l in self.links}
+        return [q for q in self.quotations.values() if q.id not in used]
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "claims": {k: v.to_dict() for k, v in self.claims.items()},
+            "sources": {k: v.to_dict() for k, v in self.sources.items()},
+            "quotations": {k: v.to_dict() for k, v in self.quotations.items()},
+            "links": [l.to_dict() for l in self.links],
+        }
+
+
+def load_notes(payload: Iterable[Dict[str, Any]]) -> List[ResearchNote]:
+    """Parse an iterable of raw note dicts into :class:`ResearchNote` objects."""
+    return [ResearchNote.from_dict(item) for item in payload]
+
+# draft note 1226
