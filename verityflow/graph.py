@@ -96,3 +96,23 @@ def to_adjacency(graph: ProvenanceGraph) -> Dict[str, List[str]]:
     for claim_id in graph.claims:
         adj[claim_id] = [s.id for s in graph.sources_for_claim(claim_id)]
     return adj
+
+
+def to_edge_list(graph: ProvenanceGraph) -> List[Dict[str, str]]:
+    """Flat edge list (claim <- quotation <- source) for tabular export."""
+    edges: List[Dict[str, str]] = []
+    for l in graph.links:
+        q = graph.quotations.get(l.quotation_id)
+        src = graph.sources.get(q.source_id) if q else None
+        edges.append(
+            {
+                "claim_id": l.claim_id,
+                "quotation_id": l.quotation_id,
+                "source_id": src.id if src else "",
+                "relation": l.relation,
+                "confidence": f"{l.confidence:.2f}",
+            }
+        )
+    return edges
+
+# draft note 1222
