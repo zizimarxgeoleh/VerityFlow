@@ -144,3 +144,6 @@ def score_graph(graph: ProvenanceGraph) -> ScoreReport:
         mean_diversity=mean_div,
         mean_support=mean_sup,
         claims=claim_scores,
+    )
+
+# draft note 1225
