@@ -342,3 +342,46 @@ Because both halves signal failure through exit codes, the pipeline composes cle
 ## Extension seams
 
 VerityFlow is small on purpose, but three seams are designed for extension:
+
+1. **Relation vocabulary.** `RELATION_WEIGHTS` in `model.py` is the single source of truth for what relations exist and how they weigh. Add a `background` or `methodology` relation there and it flows through parsing, scoring and dossiers automatically.
+
+2. **Domain derivation.** `Source.domain()` decides what counts as an independent provenance source for diversity. Swap the host-based heuristic for an org-registry lookup, an ISSN normaliser, or a domain-blocklist and diversity scoring adapts with no other change.
+
+3. **Verdict policy.** The `_verdict` function in `dossier.py` and the `Grade`/health-weighting in `Summariser.cs` encode editorial policy. These are the knobs to turn when a team wants stricter thresholds (e.g. require three domains for `well-supported`) without touching the graph or scoring layers.
+
+Because each pipeline stage is a pure function over the previous stage's data structures, you can also splice in your own stage — for instance, a de-duplication pass over near-identical quotations — between `build_graph` and `score_graph`.
+
+---
+
+## Design principles
+
+- **Dependency-free, forever.** The Python core imports only `hashlib`, `re`, `math`, `json`, `argparse` and `dataclasses`. The .NET runtime uses only `System.Text.Json`. No lockfiles, no supply chain.
+- **Deterministic ids.** Every synthesised id is a content hash, so graphs are reproducible and diff-friendly across runs and machines.
+- **Fail soft on structure, hard on vocabulary.** Dangling references are reported, not fatal — you can inspect a half-wired bundle. An unknown relation is fatal — the vocabulary is a contract.
+- **Two runtimes, one contract.** The JSON dossier is the seam between Python and .NET. Either half is useful alone.
+
+---
+
+## Glossary
+
+- **Claim** — an assertion under scrutiny; the thing evidence is marshalled for or against.
+- **Source** — a citable artefact (paper, dataset, interview, webpage, book), tagged with a tier.
+- **Quotation** — a verbatim span lifted from exactly one source, optionally with a locator.
+- **Evidence link** — a typed, confidence-weighted edge from a quotation to a claim.
+- **Research note** — the ingestion unit: one claim plus its sources, quotations and links.
+- **Provenance graph** — the compiled, de-duplicated directed graph over all notes.
+- **Provenance domain** — the coarse origin of a source (URL host, publisher or author) used for diversity.
+- **Citation coverage** — fraction of claims with at least one supporting link.
+- **Source diversity** — normalised Shannon entropy over the domains backing a claim.
+- **Support index** — logistic-squashed, confidence-weighted net support in `(0, 1)`.
+- **Verdict** — the categorical judgement (`well-supported` … `refuted`) assigned per claim.
+- **Dossier** — the human/machine deliverable pairing verdicts with the underlying evidence.
+- **Provenance health** — the .NET summariser's blended, graded score for a whole dossier.
+- **Dangling link** — an edge whose claim or quotation is missing from the graph.
+- **Orphan quotation** — a quotation no link references.
+
+---
+
+VerityFlow is licensed under the MIT License. See [`LICENSE`](LICENSE), and [`CONTRIBUTING.md`](CONTRIBUTING.md) if you would like to help.
+
+<!-- draft note 1228 -->
