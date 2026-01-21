@@ -36,3 +36,13 @@ __all__ = [
     "GraphStats",
     "citation_coverage",
     "source_diversity",
+    "claim_support_strength",
+    "ScoreReport",
+    "build_dossier",
+    "render_markdown",
+    "render_json",
+]
+
+__version__ = "5.0.0"
+
+# draft note 1230
