@@ -139,3 +139,29 @@ def build_parser() -> argparse.ArgumentParser:
     v = sub.add_parser("validate", help="check note bundles for anomalies")
     add_io(v)
     v.set_defaults(func=cmd_validate)
+
+    return p
+
+
+def main(argv: List[str] | None = None) -> int:
+    parser = build_parser()
+    args = parser.parse_args(argv)
+    if args.version:
+        from . import __version__
+
+        print(f"verityflow {__version__}")
+        return 0
+    if not getattr(args, "command", None):
+        parser.print_help()
+        return 1
+    try:
+        return args.func(args)
+    except (ValueError, KeyError) as exc:
+        sys.stderr.write(f"error: {exc}\n")
+        return 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+
+# draft note 1237
