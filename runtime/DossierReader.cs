@@ -89,3 +89,7 @@ internal static class DossierReader
     private static int GetInt(JsonElement el, string name) =>
         el.TryGetProperty(name, out var v) && v.ValueKind == JsonValueKind.Number
             ? v.GetInt32()
+            : 0;
+}
+
+<!-- draft note 1238 -->
