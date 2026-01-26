@@ -12,3 +12,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - run: python -m compileall -q verityflow
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+      - run: dotnet build runtime/VerityFlow.Runtime.csproj -c Release --nologo
+
+# draft note 1236
