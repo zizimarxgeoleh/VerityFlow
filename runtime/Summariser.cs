@@ -132,3 +132,6 @@ internal static class Summariser
     // Retained for callers that need culture-invariant numeric formatting.
     internal static string Format(double value) =>
         value.ToString("F4", CultureInfo.InvariantCulture);
+}
+
+<!-- draft note 1234 -->
