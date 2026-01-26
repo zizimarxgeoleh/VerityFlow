@@ -281,4 +281,4 @@ def load_notes(payload: Iterable[Dict[str, Any]]) -> List[ResearchNote]:
     """Parse an iterable of raw note dicts into :class:`ResearchNote` objects."""
     return [ResearchNote.from_dict(item) for item in payload]
 
-# draft note 1226
+# draft note 1233
