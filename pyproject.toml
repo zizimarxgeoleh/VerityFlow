@@ -10,3 +10,8 @@ Homepage = "https://github.com/zizimarxgeoleh/VerityFlow"
 Repository = "https://github.com/zizimarxgeoleh/VerityFlow"
 Issues = "https://github.com/zizimarxgeoleh/VerityFlow/issues"
 Changelog = "https://github.com/zizimarxgeoleh/VerityFlow/blob/main/CHANGELOG.md"
+
+[tool.verityflow]
+report-format = "json"
+
+<!-- draft note 1244 -->
