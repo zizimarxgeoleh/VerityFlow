@@ -115,4 +115,4 @@ def to_edge_list(graph: ProvenanceGraph) -> List[Dict[str, str]]:
         )
     return edges
 
-# draft note 1246
+# draft note 1248
