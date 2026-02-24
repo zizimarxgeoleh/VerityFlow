@@ -62,3 +62,18 @@ internal static class Program
         return summary.Grade == "F" ? 2 : 0;
     }
 
+    private static void PrintUsage()
+    {
+        var sb = new StringBuilder();
+        sb.AppendLine("VerityFlow.Runtime — dossier summariser");
+        sb.AppendLine();
+        sb.AppendLine("Usage:");
+        sb.AppendLine("  VerityFlow.Runtime [--input <file>] [--output <file>] [--format text|json]");
+        sb.AppendLine();
+        sb.AppendLine("Reads a JSON dossier (from `verityflow dossier --format json`) and");
+        sb.AppendLine("prints verdict tallies, weakest claims and a provenance health grade.");
+        Console.Out.WriteLine(sb.ToString());
+    }
+}
+
+<!-- draft note 1252 -->
