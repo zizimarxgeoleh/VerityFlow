@@ -18,4 +18,4 @@ jobs:
           dotnet-version: '9.0.x'
       - run: dotnet build runtime/VerityFlow.Runtime.csproj -c Release --nologo
 
-# draft note 1236
+# draft note 1251
