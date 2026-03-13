@@ -146,4 +146,4 @@ def score_graph(graph: ProvenanceGraph) -> ScoreReport:
         claims=claim_scores,
     )
 
-# draft note 1235
+# draft note 1262
