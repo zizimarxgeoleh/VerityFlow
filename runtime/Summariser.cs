@@ -134,4 +134,4 @@ internal static class Summariser
         value.ToString("F4", CultureInfo.InvariantCulture);
 }
 
-<!-- draft note 1240 -->
+<!-- draft note 1263 -->
