@@ -384,4 +384,4 @@ Because each pipeline stage is a pure function over the previous stage's data st
 
 VerityFlow is licensed under the MIT License. See [`LICENSE`](LICENSE), and [`CONTRIBUTING.md`](CONTRIBUTING.md) if you would like to help.
 
-<!-- draft note 1254 -->
+<!-- draft note 1269 -->
