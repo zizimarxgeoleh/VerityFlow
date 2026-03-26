@@ -15,4 +15,4 @@ clean:
 	@echo Cleaning generated report artifacts
 
 
-<!-- draft note 1266 -->
+<!-- draft note 1267 -->
