@@ -91,5 +91,3 @@ internal static class DossierReader
             ? v.GetInt32()
             : 0;
 }
-
-<!-- draft note 1260 -->
