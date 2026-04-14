@@ -75,5 +75,3 @@ internal static class Program
         Console.Out.WriteLine(sb.ToString());
     }
 }
-
-<!-- draft note 1252 -->
