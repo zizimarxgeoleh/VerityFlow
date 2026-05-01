@@ -60,5 +60,3 @@ internal sealed class CliOptions
         return null;
     }
 }
-
-<!-- draft note 1261 -->
