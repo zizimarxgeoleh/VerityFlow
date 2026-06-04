@@ -133,5 +133,3 @@ internal static class Summariser
     internal static string Format(double value) =>
         value.ToString("F4", CultureInfo.InvariantCulture);
 }
-
-<!-- draft note 1263 -->
