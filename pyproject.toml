@@ -13,5 +13,3 @@ Changelog = "https://github.com/zizimarxgeoleh/VerityFlow/blob/main/CHANGELOG.md
 
 [tool.verityflow]
 report-format = "json"
-
-<!-- draft note 1244 -->
