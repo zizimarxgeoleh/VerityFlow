@@ -8,3 +8,6 @@ labels: enhancement
 ## Workflow
 
 ## Input and report impact
+
+## Proposed design
+
