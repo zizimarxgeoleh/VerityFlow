@@ -122,5 +122,3 @@ Entries describe user-visible behavior at each release.
 - First public release: the data model for claims, sources, quotations and
   evidence links; deterministic content-hash ids; JSON research-note ingestion
   keyed by `source_title` and `quotation_text`.
-
-<!-- draft note 1218 -->
