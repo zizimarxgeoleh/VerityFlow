@@ -227,7 +227,7 @@ Coverage is the fraction of claims that carry **at least one supporting (positiv
 coverage = |{ c ∈ C : ∃ link l on c with weight(l.relation) > 0 }| / |C|
 ```
 
-Coverage is the bluntest metric and the first thing a reviewer should look at. A report at 60% coverage has, by definition, 40% of its claims resting on nothing.
+Coverage is the bluntest metric and the first thing a reviewer should look at. The dossier summary banner always prints it, so the number travels with the report. A report at 60% coverage has, by definition, 40% of its claims resting on nothing.
 
 ### Source diversity
 
