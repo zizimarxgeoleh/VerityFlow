@@ -16,5 +16,5 @@ fixtures or operator input -> parser -> normalized domain records -> analysis en
 
 ## Data contracts
 
-Input records are plain JSON or JSONL documents. The analysis layer uses typed, normalized records; report renderers consume a compact serializable summary. This boundary keeps extensions additive and makes reports suitable for review pipelines.
+Input records are plain JSON or JSONL documents. The analysis layer uses typed, normalized records; report renderers consume a compact serializable summary. This boundary keeps extensions additive and makes reports suitable for review pipelines. The dossier is deliberately the only cross-language contract, so either runtime can be replaced without touching the other.
 
