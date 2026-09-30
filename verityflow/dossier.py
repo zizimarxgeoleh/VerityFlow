@@ -125,6 +125,11 @@ def render_json(dossier: Dossier) -> Dict[str, Any]:
     }
 
 
+def _table_cell(value: str) -> str:
+    """Collapse a value into a single, table-safe Markdown cell."""
+    return " ".join(value.split()).replace("|", "\\|")
+
+
 _VERDICT_BADGE = {
     "well-supported": "🟢",
     "supported": "🟢",
@@ -164,7 +169,7 @@ def render_markdown(dossier: Dossier) -> str:
     lines.append("")
     for e in dossier.entries:
         badge = _VERDICT_BADGE.get(e.verdict, "•")
-        lines.append(f"### {badge} {e.claim_text}")
+        lines.append(f"### {badge} {' '.join(e.claim_text.split())}")
         lines.append("")
         lines.append(
             f"- **Verdict:** {e.verdict}  "
@@ -181,8 +186,8 @@ def render_markdown(dossier: Dossier) -> str:
         lines.append("| Relation | Conf. | Source | Tier | Quotation |")
         lines.append("| --- | --- | --- | --- | --- |")
         for q in e.quotations:
-            text = q["text"].replace("|", "\\|")
-            loc = f" ({q['locator']})" if q["locator"] else ""
+            text = _table_cell(q["text"])
+            loc = f" ({_table_cell(q['locator'])})" if q["locator"] else ""
             lines.append(
                 f"| {q['relation']} | {q['confidence']:.2f} | "
                 f"{q['source_title']}{loc} | {q['source_tier']} | {text} |"
