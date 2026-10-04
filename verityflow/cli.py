@@ -144,6 +144,8 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: List[str] | None = None) -> int:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     parser = build_parser()
     args = parser.parse_args(argv)
     if args.version:
@@ -156,7 +158,7 @@ def main(argv: List[str] | None = None) -> int:
         return 1
     try:
         return args.func(args)
-    except (ValueError, KeyError) as exc:
+    except (ValueError, KeyError, OSError) as exc:
         sys.stderr.write(f"error: {exc}\n")
         return 1
 
