@@ -7,6 +7,15 @@ Entries describe user-visible behavior at each release.
 
 ## [Unreleased]
 
+### Fixed
+
+- Markdown dossiers collapse newlines and escape pipes inside quotations, so a
+  multi-line span no longer breaks the evidence table.
+- An unreadable input file now reports `error: ...` and exits `1` instead of
+  printing a stack trace.
+- Dossiers print as UTF-8, so the verdict badges render on consoles whose
+  default code page cannot encode them.
+
 ### Changed
 
 - Rule wording in the dossier banner is being reviewed for the next patch.
