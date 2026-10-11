@@ -11,4 +11,5 @@
 - [ ] Interactive report exploration
 - [ ] Pluggable policy and metric packs
 - [ ] Release automation and versioned report archives
+- [ ] A streaming reader for note bundles too large to hold in memory
 
