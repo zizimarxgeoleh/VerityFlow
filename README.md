@@ -335,7 +335,7 @@ VerityFlow is a batch tool: it reads, computes, writes and exits. It has no daem
 | `verityflow validate` | clean bundle | bad input | anomalies found |
 | `VerityFlow.Runtime` | grade ≥ D | read/parse error | grade F |
 
-Because both halves signal failure through exit codes, the pipeline composes cleanly with `&&` and with CI job steps. All parse errors are written to `stderr` with an `error:` prefix so stdout stays a clean data channel.
+Because both halves signal failure through exit codes, the pipeline composes cleanly with `&&` and with CI job steps. The runtime grades `F` as exit `2`, so a publication gate can require grade `D` or better by chaining the two commands. All parse errors are written to `stderr` with an `error:` prefix so stdout stays a clean data channel.
 
 ---
 
