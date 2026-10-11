@@ -9,5 +9,5 @@ Contributions are most effective when they begin with a small fixture that demon
 4. Describe the motivation, data shape and report impact in the pull request.
 
 ## Review focus
-Reviewers look for clear domain modeling, deterministic calculations, useful diagnostics and examples that reflect proposed behavior.
+Reviewers look for clear domain modeling, deterministic calculations, useful diagnostics and examples that reflect proposed behavior. Small, fixture-backed changes are the easiest to review; pair every metric change with the example that shows the before and after.
 
